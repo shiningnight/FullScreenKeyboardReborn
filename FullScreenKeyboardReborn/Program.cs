@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FullScreenKeyboardReborn
@@ -14,9 +11,22 @@ namespace FullScreenKeyboardReborn
         [STAThread]
         static void Main()
         {
+            //todo Single Instance feature: if there is already a instance running, toggle its visible status instead of opening a new one.
+
+            try
+            {
+                VkmController = new DController("ddx64.dll");
+            }
+            catch (DllNotFoundException e)
+            {
+                Console.WriteLine(e);
+                Environment.Exit(-1);
+            }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new MainBoard());
         }
+
+        public static DController VkmController { get; private set; }
     }
 }

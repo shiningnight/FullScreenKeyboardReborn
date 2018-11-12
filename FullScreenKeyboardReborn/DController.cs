@@ -52,59 +52,65 @@ namespace FullScreenKeyboardReborn
 
         private IntPtr _mHinst;
 
+        public DController()
+        {
+            Load("ddx64.dll");
+        }
+
+        public DController(string dllPath)
+        {
+            Load(dllPath);
+        }
+
          ~DController()
         {
              if (!_mHinst.Equals(IntPtr.Zero))
              {
-                 bool b = FreeLibrary(_mHinst);
+                 FreeLibrary(_mHinst);
              }
-        }
-
-
-        public int Load(string dllfile)
-        {
-            _mHinst = LoadLibrary(dllfile);
-            if (_mHinst.Equals(IntPtr.Zero))
-            {
-                return -2;
-            }
-
-            return InitDdFuncEndpoint(_mHinst);
         }
 
         //取函数地址
         //返回值
-        //-1：取通用函数地址错误,0：取通用函数地址正确
-        private int InitDdFuncEndpoint(IntPtr hinst)
+        //0：取通用函数地址正确
+        public int Load(string dllPath)
         {
-            IntPtr ptr;
+            var notFound =  new DllNotFoundException("Dd driver dll not found.");
 
-            ptr = GetProcAddress(hinst, "DD_btn");
-            if (ptr.Equals(IntPtr.Zero)) { return -1; }
+            _mHinst = LoadLibrary(dllPath);
+            if (_mHinst.Equals(IntPtr.Zero))
+            {
+                throw notFound;
+            }
+
+            var loadFailed = new DllNotFoundException("Could not load dd driver dll.");
+
+            var ptr = GetProcAddress(_mHinst, "DD_btn");
+            if (ptr.Equals(IntPtr.Zero)) { throw loadFailed; }
             Btn = Marshal.GetDelegateForFunctionPointer(ptr, typeof(PDdBtn)) as PDdBtn;
 
-            ptr = GetProcAddress(hinst, "DD_whl");
-            if (ptr.Equals(IntPtr.Zero)) { return -1; }
+            ptr = GetProcAddress(_mHinst, "DD_whl");
+            if (ptr.Equals(IntPtr.Zero)) { throw loadFailed; }
             Whl = Marshal.GetDelegateForFunctionPointer(ptr, typeof(PDdWhl)) as PDdWhl;
             
-            ptr = GetProcAddress(hinst, "DD_mov");
-            if (ptr.Equals(IntPtr.Zero)) { return -1; }
+            ptr = GetProcAddress(_mHinst, "DD_mov");
+            if (ptr.Equals(IntPtr.Zero)) { throw loadFailed; }
             Mov = Marshal.GetDelegateForFunctionPointer(ptr, typeof(PDdMov)) as PDdMov;
 
-            ptr = GetProcAddress(hinst, "DD_key");
-            if (ptr.Equals(IntPtr.Zero)) { return -1; }
+            ptr = GetProcAddress(_mHinst, "DD_key");
+            if (ptr.Equals(IntPtr.Zero)) { throw loadFailed; }
             Key = Marshal.GetDelegateForFunctionPointer(ptr, typeof(PDdKey)) as PDdKey;
 
-            ptr = GetProcAddress(hinst, "DD_movR");
-            if (ptr.Equals(IntPtr.Zero)) { return -1; }
+            ptr = GetProcAddress(_mHinst, "DD_movR");
+            if (ptr.Equals(IntPtr.Zero)) { throw loadFailed; }
             MovR = Marshal.GetDelegateForFunctionPointer(ptr, typeof(PDdMovR)) as PDdMovR;
 
-            ptr = GetProcAddress(hinst, "DD_str");
-            if (ptr.Equals(IntPtr.Zero)) { return -1; }
+            ptr = GetProcAddress(_mHinst, "DD_str");
+            if (ptr.Equals(IntPtr.Zero)) { throw loadFailed; }
             Str = Marshal.GetDelegateForFunctionPointer(ptr, typeof(PDdStr)) as PDdStr;
 
-            ptr = GetProcAddress(hinst, "DD_todc");
-            if (ptr.Equals(IntPtr.Zero)) { return -1; }
+            ptr = GetProcAddress(_mHinst, "DD_todc");
+            if (ptr.Equals(IntPtr.Zero)) { throw loadFailed; }
             Todc = Marshal.GetDelegateForFunctionPointer(ptr, typeof(PDdTodc)) as PDdTodc;
 
             return 0;
