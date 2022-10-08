@@ -3,6 +3,7 @@ using System.Windows.Forms;
 
 namespace FullScreenKeyboardReborn
 {
+
     static class Program
     {
         /// <summary>
@@ -15,7 +16,8 @@ namespace FullScreenKeyboardReborn
 
             try
             {
-                VkmController = new DController("ddx64.dll");
+                Controller = new DController();
+                //Controller = new Win32Controller();
             }
             catch (DllNotFoundException e)
             {
@@ -25,8 +27,12 @@ namespace FullScreenKeyboardReborn
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainBoard());
+            
         }
 
-        public static DController VkmController { get; private set; }
+        public static VkmController Controller { get; private set; }
+        public static Settings KeyboardSettings = Settings.Load();
+        public static KeyboardHook Hook = new KeyboardHook();
+        public delegate void KeyboardHookHandler(int vkCode, KeyboardHook.EventType eventType);
     }
 }

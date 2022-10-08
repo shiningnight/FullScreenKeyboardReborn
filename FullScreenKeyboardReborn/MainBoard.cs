@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using MetroFramework.Controls;
 using MetroFramework.Forms;
 
 
@@ -30,7 +31,7 @@ namespace FullScreenKeyboardReborn
         }
 
 
-        private void HideButton_Click(object sender, System.EventArgs e)
+        private void HideButton_Click(object sender, EventArgs e)
         {
             this.Hide();
         }
@@ -58,6 +59,7 @@ namespace FullScreenKeyboardReborn
 
         private void MainBoard_Load(object sender, EventArgs e)
         {
+            Program.Hook.Start();
             notifyIcon1.ShowBalloonTip(3);
 
         }
@@ -110,5 +112,26 @@ namespace FullScreenKeyboardReborn
 
         private const int SnapThreshold = 10;
 
+        private void gameCubeGToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (gameCube2.Visible)
+            {
+                gameCube2.Visible = false;
+            }
+            else
+            {
+                gameCube2.Visible = true;
+            }
+        }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new SettinsForm().ShowDialog();
+        }
+
+        private void MainBoard_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Program.Hook.Stop();
+        }
     }
 }

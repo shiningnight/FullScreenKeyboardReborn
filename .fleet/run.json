@@ -1,0 +1,12 @@
+{
+    "configurations": [
+        {
+            "type": "dotnet",
+            "name": "FSKR",
+            "projectPath": "FullScreenKeyboardReborn/",
+            "exePath": "FullScreenKeyboardReborn/bin/Debug/FullScreenKeyboardReborn.exe",
+            "args": [],
+        },
+
+    ]
+}

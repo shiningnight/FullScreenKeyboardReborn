@@ -1,29 +1,31 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace FullScreenKeyboardReborn
 {
-    //组合键枚举
-    public enum KeyModifiers
-    {
-        None = 0,
-        Alt = 1,
-        Ctrl = 2,
-        Shift = 4,
-        Win = 8
-    }
 
-    //鼠标按键枚举 
-    public enum MouseBtn
+    class DController : VkmController
     {
-        LeftDown = 1,
-        LeftUp = 2,
-        RightDown = 4,
-        RightUp = 8
-    }
+        //组合键枚举
+        public enum KeyModifiers
+        {
+            None = 0,
+            Alt = 1,
+            Ctrl = 2,
+            Shift = 4,
+            Win = 8
+        }
 
-    class DController
-    {
+        //鼠标按键枚举 
+        public enum MouseBtn
+        {
+            LeftDown = 1,
+            LeftUp = 2,
+            RightDown = 4,
+            RightUp = 8
+        }
+
         [DllImport("Kernel32")]
         private static extern IntPtr LoadLibrary(string dllfile);
 
@@ -42,12 +44,12 @@ namespace FullScreenKeyboardReborn
         public delegate int PDdStr(string str);
         public delegate int PDdTodc(int vkcode);
 
-        public PDdBtn Btn; // 鼠标点击
-        public PDdWhl Whl; // 鼠标滚轮
-        public PDdMov Mov; // 鼠标绝对移动
-        public PDdMovR MovR; // 鼠标相对移动
-        public PDdKey Key; // 键盘按键
-        public PDdStr Str; // 键盘字符
+        public PDdBtn DdBtn; // 鼠标点击
+        public PDdWhl DdWhl; // 鼠标滚轮
+        public PDdMov DdMov; // 鼠标绝对移动
+        public PDdMovR DdMovR; // 鼠标相对移动
+        public PDdKey DdKey; // 键盘按键
+        public PDdStr DdStr; // 键盘字符
         public PDdTodc Todc; // 标准虚拟键码转DD码
 
         private IntPtr _mHinst;
@@ -87,33 +89,45 @@ namespace FullScreenKeyboardReborn
 
             var ptr = GetProcAddress(_mHinst, "DD_btn");
             if (ptr.Equals(IntPtr.Zero)) { throw loadFailed; }
-            Btn = Marshal.GetDelegateForFunctionPointer(ptr, typeof(PDdBtn)) as PDdBtn;
+            DdBtn = Marshal.GetDelegateForFunctionPointer(ptr, typeof(PDdBtn)) as PDdBtn;
 
             ptr = GetProcAddress(_mHinst, "DD_whl");
             if (ptr.Equals(IntPtr.Zero)) { throw loadFailed; }
-            Whl = Marshal.GetDelegateForFunctionPointer(ptr, typeof(PDdWhl)) as PDdWhl;
+            DdWhl = Marshal.GetDelegateForFunctionPointer(ptr, typeof(PDdWhl)) as PDdWhl;
             
             ptr = GetProcAddress(_mHinst, "DD_mov");
             if (ptr.Equals(IntPtr.Zero)) { throw loadFailed; }
-            Mov = Marshal.GetDelegateForFunctionPointer(ptr, typeof(PDdMov)) as PDdMov;
+            DdMov = Marshal.GetDelegateForFunctionPointer(ptr, typeof(PDdMov)) as PDdMov;
 
             ptr = GetProcAddress(_mHinst, "DD_key");
             if (ptr.Equals(IntPtr.Zero)) { throw loadFailed; }
-            Key = Marshal.GetDelegateForFunctionPointer(ptr, typeof(PDdKey)) as PDdKey;
+            DdKey = Marshal.GetDelegateForFunctionPointer(ptr, typeof(PDdKey)) as PDdKey;
 
             ptr = GetProcAddress(_mHinst, "DD_movR");
             if (ptr.Equals(IntPtr.Zero)) { throw loadFailed; }
-            MovR = Marshal.GetDelegateForFunctionPointer(ptr, typeof(PDdMovR)) as PDdMovR;
+            DdMovR = Marshal.GetDelegateForFunctionPointer(ptr, typeof(PDdMovR)) as PDdMovR;
 
             ptr = GetProcAddress(_mHinst, "DD_str");
             if (ptr.Equals(IntPtr.Zero)) { throw loadFailed; }
-            Str = Marshal.GetDelegateForFunctionPointer(ptr, typeof(PDdStr)) as PDdStr;
+            DdStr = Marshal.GetDelegateForFunctionPointer(ptr, typeof(PDdStr)) as PDdStr;
 
             ptr = GetProcAddress(_mHinst, "DD_todc");
             if (ptr.Equals(IntPtr.Zero)) { throw loadFailed; }
             Todc = Marshal.GetDelegateForFunctionPointer(ptr, typeof(PDdTodc)) as PDdTodc;
 
+            DdBtn(9884625);
+
             return 0;
+        }
+
+        public int Key(Keys vkCode, int flag)
+        {
+            if (flag == 0)
+            {
+                flag = 1;
+            }
+
+            return DdKey(Todc((int)vkCode), flag);
         }
     }
 

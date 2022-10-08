@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>FullScreenKeyboardReborn</RootNamespace>
     <AssemblyName>FullScreenKeyboardReborn</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
@@ -55,6 +55,15 @@
   <PropertyGroup>
     <ApplicationIcon>kb.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
@@ -64,6 +73,9 @@
     </Reference>
     <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -79,6 +91,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Flags.cs" />
+    <Compile Include="GameCube.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GameCube.Designer.cs">
+      <DependentUpon>GameCube.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KeyboardHook.cs" />
+    <Compile Include="SettinsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettinsForm.Designer.cs">
+      <DependentUpon>SettinsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
     <Compile Include="VirtualKey.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -91,6 +117,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VkmController.cs" />
+    <Compile Include="Win32Controller.cs" />
+    <EmbeddedResource Include="GameCube.resx">
+      <DependentUpon>GameCube.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettinsForm.resx">
+      <DependentUpon>SettinsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainBoard.resx">
       <DependentUpon>MainBoard.cs</DependentUpon>
     </EmbeddedResource>
@@ -111,6 +145,7 @@
       <DependentUpon>VirtualKey.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -126,9 +161,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="kb.ico" />
+    <None Include="seal.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy "$(ProjectDir)DD94687.64.dll" "$(TargetDir)ddx64.dll"</PostBuildEvent>
+    <PostBuildEvent>copy "$(ProjectDir)DD96699.64.dll" "$(TargetDir)ddx64.dll"
+xcopy /E /Y "$(ProjectDir)Keyboards" "$(TargetDir)Keyboards\"</PostBuildEvent>
   </PropertyGroup>
 </Project>
