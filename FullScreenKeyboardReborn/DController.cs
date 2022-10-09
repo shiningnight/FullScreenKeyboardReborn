@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -25,6 +26,18 @@ namespace FullScreenKeyboardReborn
             RightDown = 4,
             RightUp = 8
         }
+
+        public static Dictionary<Keys, int> CommandCodeMap = new Dictionary<Keys, int>()
+        {
+            { Keys.LControlKey, 600 },
+            { Keys.RControlKey, 607 },
+            { Keys.LMenu, 602 },
+            { Keys.RMenu, 604 },
+            { Keys.LShiftKey, 500 },
+            { Keys.RShiftKey, 511 },
+            { Keys.LWin, 602 },
+            { Keys.RWin, 602 },
+        };
 
         [DllImport("Kernel32")]
         private static extern IntPtr LoadLibrary(string dllfile);
@@ -126,8 +139,15 @@ namespace FullScreenKeyboardReborn
             {
                 flag = 1;
             }
-
-            return DdKey(Todc((int)vkCode), flag);
+            int commandCode = 0;
+            if (CommandCodeMap.ContainsKey(vkCode))
+            {
+                commandCode = CommandCodeMap[vkCode];
+            }
+            else {
+                commandCode = Todc((int)vkCode);
+            }
+            return DdKey(commandCode, flag);
         }
     }
 

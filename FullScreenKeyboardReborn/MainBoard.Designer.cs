@@ -114,6 +114,8 @@ namespace FullScreenKeyboardReborn
             // 
             // hideButton
             // 
+            this.hideButton.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.hideButton.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             resources.ApplyResources(this.hideButton, "hideButton");
             this.hideButton.Name = "hideButton";
             this.hideButton.Style = MetroFramework.MetroColorStyle.Purple;
@@ -140,6 +142,8 @@ namespace FullScreenKeyboardReborn
             // 
             this.virtualKey24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.virtualKey24.Bundary = null;
+            this.virtualKey24.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.virtualKey24.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.virtualKey24.ForeColor = System.Drawing.Color.White;
             this.virtualKey24.HookResponseCodes = ((System.Collections.Generic.List<int>)(resources.GetObject("virtualKey24.HookResponseCodes")));
             this.virtualKey24.KeyLabel = "❉";
@@ -155,6 +159,8 @@ namespace FullScreenKeyboardReborn
             // 
             this.virtualKey30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.virtualKey30.Bundary = null;
+            this.virtualKey30.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.virtualKey30.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.virtualKey30.ForeColor = System.Drawing.Color.White;
             this.virtualKey30.HookResponseCodes = ((System.Collections.Generic.List<int>)(resources.GetObject("virtualKey30.HookResponseCodes")));
             this.virtualKey30.KeyLabel = "Alt";
@@ -170,6 +176,8 @@ namespace FullScreenKeyboardReborn
             // 
             this.virtualKey29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.virtualKey29.Bundary = null;
+            this.virtualKey29.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.virtualKey29.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.virtualKey29.ForeColor = System.Drawing.Color.White;
             this.virtualKey29.HookResponseCodes = ((System.Collections.Generic.List<int>)(resources.GetObject("virtualKey29.HookResponseCodes")));
             this.virtualKey29.KeyLabel = "Esc";
@@ -185,6 +193,8 @@ namespace FullScreenKeyboardReborn
             // 
             this.virtualKey28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.virtualKey28.Bundary = null;
+            this.virtualKey28.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.virtualKey28.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.virtualKey28.ForeColor = System.Drawing.Color.White;
             this.virtualKey28.HookResponseCodes = ((System.Collections.Generic.List<int>)(resources.GetObject("virtualKey28.HookResponseCodes")));
             this.virtualKey28.KeyLabel = "Shift";
@@ -200,6 +210,8 @@ namespace FullScreenKeyboardReborn
             // 
             this.virtualKey27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.virtualKey27.Bundary = null;
+            this.virtualKey27.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.virtualKey27.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.virtualKey27.ForeColor = System.Drawing.Color.White;
             this.virtualKey27.HookResponseCodes = ((System.Collections.Generic.List<int>)(resources.GetObject("virtualKey27.HookResponseCodes")));
             this.virtualKey27.KeyLabel = "Ctrl";
@@ -209,12 +221,14 @@ namespace FullScreenKeyboardReborn
             this.virtualKey27.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.virtualKey27.UseCustomBackColor = true;
             this.virtualKey27.UseCustomForeColor = true;
-            this.virtualKey27.VkCodes.Add(System.Windows.Forms.Keys.ControlKey);
+            this.virtualKey27.VkCodes.Add(System.Windows.Forms.Keys.RControlKey);
             // 
             // virtualKey26
             // 
             this.virtualKey26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.virtualKey26.Bundary = null;
+            this.virtualKey26.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.virtualKey26.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.virtualKey26.ForeColor = System.Drawing.Color.White;
             this.virtualKey26.HookResponseCodes = ((System.Collections.Generic.List<int>)(resources.GetObject("virtualKey26.HookResponseCodes")));
             this.virtualKey26.KeyLabel = "Enter";
@@ -230,6 +244,8 @@ namespace FullScreenKeyboardReborn
             // 
             this.virtualKey25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.virtualKey25.Bundary = null;
+            this.virtualKey25.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.virtualKey25.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.virtualKey25.ForeColor = System.Drawing.Color.White;
             this.virtualKey25.HookResponseCodes = ((System.Collections.Generic.List<int>)(resources.GetObject("virtualKey25.HookResponseCodes")));
             this.virtualKey25.KeyLabel = "";
@@ -245,6 +261,8 @@ namespace FullScreenKeyboardReborn
             // 
             this.virtualKey23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.virtualKey23.Bundary = null;
+            this.virtualKey23.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.virtualKey23.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.virtualKey23.ForeColor = System.Drawing.Color.White;
             this.virtualKey23.HookResponseCodes = ((System.Collections.Generic.List<int>)(resources.GetObject("virtualKey23.HookResponseCodes")));
             this.virtualKey23.KeyLabel = "Tab";
@@ -260,6 +278,8 @@ namespace FullScreenKeyboardReborn
             // 
             this.virtualKey22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.virtualKey22.Bundary = null;
+            this.virtualKey22.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.virtualKey22.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.virtualKey22.ForeColor = System.Drawing.Color.White;
             this.virtualKey22.HookResponseCodes = ((System.Collections.Generic.List<int>)(resources.GetObject("virtualKey22.HookResponseCodes")));
             this.virtualKey22.KeyLabel = "PgDn";
@@ -275,6 +295,8 @@ namespace FullScreenKeyboardReborn
             // 
             this.virtualKey21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.virtualKey21.Bundary = null;
+            this.virtualKey21.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.virtualKey21.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.virtualKey21.ForeColor = System.Drawing.Color.White;
             this.virtualKey21.HookResponseCodes = ((System.Collections.Generic.List<int>)(resources.GetObject("virtualKey21.HookResponseCodes")));
             this.virtualKey21.KeyLabel = "PgUp";
@@ -290,6 +312,8 @@ namespace FullScreenKeyboardReborn
             // 
             this.virtualKey20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.virtualKey20.Bundary = null;
+            this.virtualKey20.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.virtualKey20.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.virtualKey20.ForeColor = System.Drawing.Color.White;
             this.virtualKey20.HookResponseCodes = ((System.Collections.Generic.List<int>)(resources.GetObject("virtualKey20.HookResponseCodes")));
             this.virtualKey20.KeyLabel = "F";
@@ -305,6 +329,8 @@ namespace FullScreenKeyboardReborn
             // 
             this.virtualKey19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.virtualKey19.Bundary = null;
+            this.virtualKey19.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.virtualKey19.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.virtualKey19.ForeColor = System.Drawing.Color.White;
             this.virtualKey19.HookResponseCodes = ((System.Collections.Generic.List<int>)(resources.GetObject("virtualKey19.HookResponseCodes")));
             this.virtualKey19.KeyLabel = "D";
@@ -320,6 +346,8 @@ namespace FullScreenKeyboardReborn
             // 
             this.virtualKey18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.virtualKey18.Bundary = null;
+            this.virtualKey18.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.virtualKey18.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.virtualKey18.ForeColor = System.Drawing.Color.White;
             this.virtualKey18.HookResponseCodes = ((System.Collections.Generic.List<int>)(resources.GetObject("virtualKey18.HookResponseCodes")));
             this.virtualKey18.KeyLabel = "S";
@@ -335,6 +363,8 @@ namespace FullScreenKeyboardReborn
             // 
             this.virtualKey17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.virtualKey17.Bundary = null;
+            this.virtualKey17.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.virtualKey17.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.virtualKey17.ForeColor = System.Drawing.Color.White;
             this.virtualKey17.HookResponseCodes = ((System.Collections.Generic.List<int>)(resources.GetObject("virtualKey17.HookResponseCodes")));
             this.virtualKey17.KeyLabel = "A";
@@ -350,6 +380,8 @@ namespace FullScreenKeyboardReborn
             // 
             this.virtualKey16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.virtualKey16.Bundary = null;
+            this.virtualKey16.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.virtualKey16.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.virtualKey16.ForeColor = System.Drawing.Color.White;
             this.virtualKey16.HookResponseCodes = ((System.Collections.Generic.List<int>)(resources.GetObject("virtualKey16.HookResponseCodes")));
             this.virtualKey16.KeyLabel = "R";
@@ -365,6 +397,8 @@ namespace FullScreenKeyboardReborn
             // 
             this.virtualKey15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.virtualKey15.Bundary = null;
+            this.virtualKey15.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.virtualKey15.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.virtualKey15.ForeColor = System.Drawing.Color.White;
             this.virtualKey15.HookResponseCodes = ((System.Collections.Generic.List<int>)(resources.GetObject("virtualKey15.HookResponseCodes")));
             this.virtualKey15.KeyLabel = "E";
@@ -380,6 +414,8 @@ namespace FullScreenKeyboardReborn
             // 
             this.virtualKey14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.virtualKey14.Bundary = null;
+            this.virtualKey14.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.virtualKey14.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.virtualKey14.ForeColor = System.Drawing.Color.White;
             this.virtualKey14.HookResponseCodes = ((System.Collections.Generic.List<int>)(resources.GetObject("virtualKey14.HookResponseCodes")));
             this.virtualKey14.KeyLabel = "W";
@@ -395,6 +431,8 @@ namespace FullScreenKeyboardReborn
             // 
             this.virtualKey13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.virtualKey13.Bundary = null;
+            this.virtualKey13.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.virtualKey13.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.virtualKey13.ForeColor = System.Drawing.Color.White;
             this.virtualKey13.HookResponseCodes = ((System.Collections.Generic.List<int>)(resources.GetObject("virtualKey13.HookResponseCodes")));
             this.virtualKey13.KeyLabel = "Q";
@@ -410,6 +448,8 @@ namespace FullScreenKeyboardReborn
             // 
             this.virtualKey12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.virtualKey12.Bundary = null;
+            this.virtualKey12.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.virtualKey12.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.virtualKey12.ForeColor = System.Drawing.Color.White;
             this.virtualKey12.HookResponseCodes = ((System.Collections.Generic.List<int>)(resources.GetObject("virtualKey12.HookResponseCodes")));
             this.virtualKey12.KeyLabel = "V";
@@ -425,6 +465,8 @@ namespace FullScreenKeyboardReborn
             // 
             this.virtualKey11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.virtualKey11.Bundary = null;
+            this.virtualKey11.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.virtualKey11.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.virtualKey11.ForeColor = System.Drawing.Color.White;
             this.virtualKey11.HookResponseCodes = ((System.Collections.Generic.List<int>)(resources.GetObject("virtualKey11.HookResponseCodes")));
             this.virtualKey11.KeyLabel = "C";
@@ -440,6 +482,8 @@ namespace FullScreenKeyboardReborn
             // 
             this.virtualKey10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.virtualKey10.Bundary = null;
+            this.virtualKey10.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.virtualKey10.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.virtualKey10.ForeColor = System.Drawing.Color.White;
             this.virtualKey10.HookResponseCodes = ((System.Collections.Generic.List<int>)(resources.GetObject("virtualKey10.HookResponseCodes")));
             this.virtualKey10.KeyLabel = "X";
@@ -455,6 +499,8 @@ namespace FullScreenKeyboardReborn
             // 
             this.virtualKey9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.virtualKey9.Bundary = null;
+            this.virtualKey9.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.virtualKey9.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.virtualKey9.ForeColor = System.Drawing.Color.White;
             this.virtualKey9.HookResponseCodes = ((System.Collections.Generic.List<int>)(resources.GetObject("virtualKey9.HookResponseCodes")));
             this.virtualKey9.KeyLabel = "Z";
@@ -470,6 +516,8 @@ namespace FullScreenKeyboardReborn
             // 
             this.virtualKey8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.virtualKey8.Bundary = null;
+            this.virtualKey8.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.virtualKey8.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.virtualKey8.ForeColor = System.Drawing.Color.White;
             this.virtualKey8.HookResponseCodes = ((System.Collections.Generic.List<int>)(resources.GetObject("virtualKey8.HookResponseCodes")));
             this.virtualKey8.KeyLabel = "↖";
@@ -486,6 +534,8 @@ namespace FullScreenKeyboardReborn
             // 
             this.virtualKey7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.virtualKey7.Bundary = null;
+            this.virtualKey7.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.virtualKey7.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.virtualKey7.ForeColor = System.Drawing.Color.White;
             this.virtualKey7.HookResponseCodes = ((System.Collections.Generic.List<int>)(resources.GetObject("virtualKey7.HookResponseCodes")));
             this.virtualKey7.KeyLabel = "←";
@@ -501,6 +551,8 @@ namespace FullScreenKeyboardReborn
             // 
             this.virtualKey2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.virtualKey2.Bundary = null;
+            this.virtualKey2.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.virtualKey2.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.virtualKey2.ForeColor = System.Drawing.Color.White;
             this.virtualKey2.HookResponseCodes = ((System.Collections.Generic.List<int>)(resources.GetObject("virtualKey2.HookResponseCodes")));
             this.virtualKey2.KeyLabel = "↗";
@@ -517,6 +569,8 @@ namespace FullScreenKeyboardReborn
             // 
             this.virtualKey1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.virtualKey1.Bundary = null;
+            this.virtualKey1.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.virtualKey1.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.virtualKey1.ForeColor = System.Drawing.Color.White;
             this.virtualKey1.HookResponseCodes = ((System.Collections.Generic.List<int>)(resources.GetObject("virtualKey1.HookResponseCodes")));
             this.virtualKey1.KeyLabel = "↑";
@@ -532,6 +586,8 @@ namespace FullScreenKeyboardReborn
             // 
             this.virtualKey3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.virtualKey3.Bundary = null;
+            this.virtualKey3.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.virtualKey3.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.virtualKey3.ForeColor = System.Drawing.Color.White;
             this.virtualKey3.HookResponseCodes = ((System.Collections.Generic.List<int>)(resources.GetObject("virtualKey3.HookResponseCodes")));
             this.virtualKey3.KeyLabel = "→";
@@ -547,6 +603,8 @@ namespace FullScreenKeyboardReborn
             // 
             this.virtualKey5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.virtualKey5.Bundary = null;
+            this.virtualKey5.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.virtualKey5.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.virtualKey5.ForeColor = System.Drawing.Color.White;
             this.virtualKey5.HookResponseCodes = ((System.Collections.Generic.List<int>)(resources.GetObject("virtualKey5.HookResponseCodes")));
             this.virtualKey5.KeyLabel = "↓";
@@ -562,6 +620,8 @@ namespace FullScreenKeyboardReborn
             // 
             this.virtualKey4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.virtualKey4.Bundary = null;
+            this.virtualKey4.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.virtualKey4.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.virtualKey4.ForeColor = System.Drawing.Color.White;
             this.virtualKey4.HookResponseCodes = ((System.Collections.Generic.List<int>)(resources.GetObject("virtualKey4.HookResponseCodes")));
             this.virtualKey4.KeyLabel = "↘";
@@ -578,6 +638,8 @@ namespace FullScreenKeyboardReborn
             // 
             this.virtualKey6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.virtualKey6.Bundary = null;
+            this.virtualKey6.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.virtualKey6.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.virtualKey6.ForeColor = System.Drawing.Color.White;
             this.virtualKey6.HookResponseCodes = ((System.Collections.Generic.List<int>)(resources.GetObject("virtualKey6.HookResponseCodes")));
             this.virtualKey6.KeyLabel = "↙";
@@ -593,8 +655,8 @@ namespace FullScreenKeyboardReborn
             // MainBoard
             // 
             this.AllowDrop = true;
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             resources.ApplyResources(this, "$this");
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ControlBox = false;
             this.Controls.Add(this.gameCube2);
             this.Controls.Add(this.virtualKey24);

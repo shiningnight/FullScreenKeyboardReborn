@@ -31,13 +31,13 @@ namespace FullScreenKeyboardReborn
             ComponentInit();
         }
 
-        public VirtualKey(String keyName, List<Point> bundary, Keys[] vkCodes)
+        public VirtualKey(String keyLabel, List<Point> bundary, Keys[] vkCodes)
         {
             EventsInit();
             ComponentInit();
 
             Bundary = bundary;
-            KeyLabel = keyName;
+            KeyLabel = keyLabel;
             VkCodes.AddRange(vkCodes);
             if(vkCodes.Length == 1)
             {
