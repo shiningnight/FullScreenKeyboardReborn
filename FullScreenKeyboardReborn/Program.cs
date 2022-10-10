@@ -27,7 +27,6 @@ namespace FullScreenKeyboardReborn
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainBoard());
-            
         }
 
         public static VkmController Controller { get; private set; }

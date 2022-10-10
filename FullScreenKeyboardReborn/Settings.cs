@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using Newtonsoft.Json;
@@ -27,6 +28,8 @@ namespace FullScreenKeyboardReborn
         public Keys CubeActionWheel = Keys.C;
         public Keys CubeActionWheelDown = Keys.Q;
         public Keys CubeActionWheelUp = Keys.E;
+        public Point CubeLastLocation = new Point(500, 500);
+        public Point MainLastLocation = new Point(500, 500);
 
         public static Settings Load() {
             Settings settings = new Settings();

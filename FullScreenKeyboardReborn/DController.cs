@@ -144,7 +144,8 @@ namespace FullScreenKeyboardReborn
             {
                 commandCode = CommandCodeMap[vkCode];
             }
-            else {
+            else 
+            {
                 commandCode = Todc((int)vkCode);
             }
             return DdKey(commandCode, flag);

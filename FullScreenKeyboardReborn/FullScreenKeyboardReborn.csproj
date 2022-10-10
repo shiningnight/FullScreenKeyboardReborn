@@ -98,6 +98,12 @@
       <DependentUpon>GameCube.cs</DependentUpon>
     </Compile>
     <Compile Include="KeyboardHook.cs" />
+    <Compile Include="GameBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameBoard.Designer.cs">
+      <DependentUpon>GameBoard.cs</DependentUpon>
+    </Compile>
     <Compile Include="SettinsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,12 @@
     <Compile Include="Win32Controller.cs" />
     <EmbeddedResource Include="GameCube.resx">
       <DependentUpon>GameCube.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameBoard.resx">
+      <DependentUpon>GameBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameBoard.zh-CN.resx">
+      <DependentUpon>GameBoard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SettinsForm.resx">
       <DependentUpon>SettinsForm.cs</DependentUpon>

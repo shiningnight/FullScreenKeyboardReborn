@@ -76,7 +76,6 @@ namespace FullScreenKeyboardReborn
             catch (FormatException)
             {
                 MetroMessageBox.Show(this, "Invalid input.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //MetroMessageBox.Show("Invalid input.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -85,6 +84,12 @@ namespace FullScreenKeyboardReborn
         {
             Close();
             Dispose();
+        }
+
+        private void setKeyPress(object sender, KeyEventArgs e)
+        {
+            var box = (MetroTextBox)sender;
+            box.Text = e.KeyCode.ToString();
         }
     }
 }

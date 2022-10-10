@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettinsForm));
             this.layouNameBox = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
@@ -63,21 +62,19 @@
             this.saveButton = new MetroFramework.Controls.MetroButton();
             this.cancelButton = new MetroFramework.Controls.MetroButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.actionModeWheelUpBox = new MetroFramework.Controls.MetroComboBox();
+            this.actionModeWheelDownBox = new MetroFramework.Controls.MetroComboBox();
+            this.actionModeWheelBox = new MetroFramework.Controls.MetroComboBox();
+            this.actionModeRightBox = new MetroFramework.Controls.MetroComboBox();
+            this.actionModeLeftBox = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel16 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel17 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel18 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel19 = new MetroFramework.Controls.MetroLabel();
-            this.actionModeLeftBox = new MetroFramework.Controls.MetroComboBox();
-            this.actionModeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.actionModeRightBox = new MetroFramework.Controls.MetroComboBox();
-            this.actionModeWheelBox = new MetroFramework.Controls.MetroComboBox();
-            this.actionModeWheelDownBox = new MetroFramework.Controls.MetroComboBox();
-            this.actionModeWheelUpBox = new MetroFramework.Controls.MetroComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.actionModeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // layouNameBox
@@ -316,6 +313,7 @@
             this.cubeRightBox.UseSelectable = true;
             this.cubeRightBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.cubeRightBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.cubeRightBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.setKeyPress);
             // 
             // metroLabel6
             // 
@@ -361,6 +359,7 @@
             this.cubeLeftBox.UseSelectable = true;
             this.cubeLeftBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.cubeLeftBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.cubeLeftBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.setKeyPress);
             // 
             // metroLabel7
             // 
@@ -406,6 +405,7 @@
             this.cubeDownBox.UseSelectable = true;
             this.cubeDownBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.cubeDownBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.cubeDownBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.setKeyPress);
             // 
             // metroLabel8
             // 
@@ -451,6 +451,7 @@
             this.cubeUpBox.UseSelectable = true;
             this.cubeUpBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.cubeUpBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.cubeUpBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.setKeyPress);
             // 
             // metroLabel9
             // 
@@ -496,6 +497,7 @@
             this.cubeActionRightBox.UseSelectable = true;
             this.cubeActionRightBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.cubeActionRightBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.cubeActionRightBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.setKeyPress);
             // 
             // metroLabel10
             // 
@@ -541,6 +543,7 @@
             this.cubeActionLeftBox.UseSelectable = true;
             this.cubeActionLeftBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.cubeActionLeftBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.cubeActionLeftBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.setKeyPress);
             // 
             // metroLabel11
             // 
@@ -586,6 +589,7 @@
             this.cubeActionWheelDownBox.UseSelectable = true;
             this.cubeActionWheelDownBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.cubeActionWheelDownBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.cubeActionWheelDownBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.setKeyPress);
             // 
             // metroLabel12
             // 
@@ -631,6 +635,7 @@
             this.cubeActionWheelUpBox.UseSelectable = true;
             this.cubeActionWheelUpBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.cubeActionWheelUpBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.cubeActionWheelUpBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.setKeyPress);
             // 
             // metroLabel13
             // 
@@ -676,6 +681,7 @@
             this.cubeActionWheelBox.UseSelectable = true;
             this.cubeActionWheelBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.cubeActionWheelBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.cubeActionWheelBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.setKeyPress);
             // 
             // metroLabel14
             // 
@@ -784,6 +790,66 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Button Mode";
             // 
+            // actionModeWheelUpBox
+            // 
+            this.actionModeWheelUpBox.FormattingEnabled = true;
+            this.actionModeWheelUpBox.ItemHeight = 23;
+            this.actionModeWheelUpBox.Location = new System.Drawing.Point(109, 176);
+            this.actionModeWheelUpBox.Name = "actionModeWheelUpBox";
+            this.actionModeWheelUpBox.Size = new System.Drawing.Size(75, 29);
+            this.actionModeWheelUpBox.Style = MetroFramework.MetroColorStyle.Purple;
+            this.actionModeWheelUpBox.TabIndex = 38;
+            this.actionModeWheelUpBox.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.actionModeWheelUpBox.UseSelectable = true;
+            // 
+            // actionModeWheelDownBox
+            // 
+            this.actionModeWheelDownBox.FormattingEnabled = true;
+            this.actionModeWheelDownBox.ItemHeight = 23;
+            this.actionModeWheelDownBox.Location = new System.Drawing.Point(109, 138);
+            this.actionModeWheelDownBox.Name = "actionModeWheelDownBox";
+            this.actionModeWheelDownBox.Size = new System.Drawing.Size(75, 29);
+            this.actionModeWheelDownBox.Style = MetroFramework.MetroColorStyle.Purple;
+            this.actionModeWheelDownBox.TabIndex = 37;
+            this.actionModeWheelDownBox.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.actionModeWheelDownBox.UseSelectable = true;
+            // 
+            // actionModeWheelBox
+            // 
+            this.actionModeWheelBox.FormattingEnabled = true;
+            this.actionModeWheelBox.ItemHeight = 23;
+            this.actionModeWheelBox.Location = new System.Drawing.Point(109, 96);
+            this.actionModeWheelBox.Name = "actionModeWheelBox";
+            this.actionModeWheelBox.Size = new System.Drawing.Size(75, 29);
+            this.actionModeWheelBox.Style = MetroFramework.MetroColorStyle.Purple;
+            this.actionModeWheelBox.TabIndex = 36;
+            this.actionModeWheelBox.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.actionModeWheelBox.UseSelectable = true;
+            // 
+            // actionModeRightBox
+            // 
+            this.actionModeRightBox.FormattingEnabled = true;
+            this.actionModeRightBox.ItemHeight = 23;
+            this.actionModeRightBox.Location = new System.Drawing.Point(109, 56);
+            this.actionModeRightBox.Name = "actionModeRightBox";
+            this.actionModeRightBox.Size = new System.Drawing.Size(75, 29);
+            this.actionModeRightBox.Style = MetroFramework.MetroColorStyle.Purple;
+            this.actionModeRightBox.TabIndex = 35;
+            this.actionModeRightBox.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.actionModeRightBox.UseSelectable = true;
+            // 
+            // actionModeLeftBox
+            // 
+            this.actionModeLeftBox.FormattingEnabled = true;
+            this.actionModeLeftBox.ItemHeight = 23;
+            this.actionModeLeftBox.Location = new System.Drawing.Point(109, 20);
+            this.actionModeLeftBox.Name = "actionModeLeftBox";
+            this.actionModeLeftBox.Size = new System.Drawing.Size(75, 29);
+            this.actionModeLeftBox.Style = MetroFramework.MetroColorStyle.Purple;
+            this.actionModeLeftBox.TabIndex = 34;
+            this.actionModeLeftBox.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.actionModeLeftBox.UseSelectable = true;
+            // 
             // metroLabel15
             // 
             this.metroLabel15.AutoSize = true;
@@ -839,75 +905,14 @@
             this.metroLabel19.Text = "Left Click";
             this.metroLabel19.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // actionModeLeftBox
-            // 
-            this.actionModeLeftBox.FormattingEnabled = true;
-            this.actionModeLeftBox.ItemHeight = 23;
-            this.actionModeLeftBox.Location = new System.Drawing.Point(109, 20);
-            this.actionModeLeftBox.Name = "actionModeLeftBox";
-            this.actionModeLeftBox.Size = new System.Drawing.Size(75, 29);
-            this.actionModeLeftBox.Style = MetroFramework.MetroColorStyle.Purple;
-            this.actionModeLeftBox.TabIndex = 34;
-            this.actionModeLeftBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.actionModeLeftBox.UseSelectable = true;
-            // 
-            // actionModeBindingSource
-            // 
-            this.actionModeBindingSource.DataSource = typeof(FullScreenKeyboardReborn.VirtualKey.ActionMode);
-            // 
-            // actionModeRightBox
-            // 
-            this.actionModeRightBox.FormattingEnabled = true;
-            this.actionModeRightBox.ItemHeight = 23;
-            this.actionModeRightBox.Location = new System.Drawing.Point(109, 56);
-            this.actionModeRightBox.Name = "actionModeRightBox";
-            this.actionModeRightBox.Size = new System.Drawing.Size(75, 29);
-            this.actionModeRightBox.Style = MetroFramework.MetroColorStyle.Purple;
-            this.actionModeRightBox.TabIndex = 35;
-            this.actionModeRightBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.actionModeRightBox.UseSelectable = true;
-            // 
-            // actionModeWheelBox
-            // 
-            this.actionModeWheelBox.FormattingEnabled = true;
-            this.actionModeWheelBox.ItemHeight = 23;
-            this.actionModeWheelBox.Location = new System.Drawing.Point(109, 96);
-            this.actionModeWheelBox.Name = "actionModeWheelBox";
-            this.actionModeWheelBox.Size = new System.Drawing.Size(75, 29);
-            this.actionModeWheelBox.Style = MetroFramework.MetroColorStyle.Purple;
-            this.actionModeWheelBox.TabIndex = 36;
-            this.actionModeWheelBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.actionModeWheelBox.UseSelectable = true;
-            // 
-            // actionModeWheelDownBox
-            // 
-            this.actionModeWheelDownBox.FormattingEnabled = true;
-            this.actionModeWheelDownBox.ItemHeight = 23;
-            this.actionModeWheelDownBox.Location = new System.Drawing.Point(109, 138);
-            this.actionModeWheelDownBox.Name = "actionModeWheelDownBox";
-            this.actionModeWheelDownBox.Size = new System.Drawing.Size(75, 29);
-            this.actionModeWheelDownBox.Style = MetroFramework.MetroColorStyle.Purple;
-            this.actionModeWheelDownBox.TabIndex = 37;
-            this.actionModeWheelDownBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.actionModeWheelDownBox.UseSelectable = true;
-            // 
-            // actionModeWheelUpBox
-            // 
-            this.actionModeWheelUpBox.FormattingEnabled = true;
-            this.actionModeWheelUpBox.ItemHeight = 23;
-            this.actionModeWheelUpBox.Location = new System.Drawing.Point(109, 176);
-            this.actionModeWheelUpBox.Name = "actionModeWheelUpBox";
-            this.actionModeWheelUpBox.Size = new System.Drawing.Size(75, 29);
-            this.actionModeWheelUpBox.Style = MetroFramework.MetroColorStyle.Purple;
-            this.actionModeWheelUpBox.TabIndex = 38;
-            this.actionModeWheelUpBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.actionModeWheelUpBox.UseSelectable = true;
-            // 
             // SettinsForm
             // 
+            // this.AutoScaleDimensions = new System.Drawing.SizeF(168F, 168F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(443, 491);
+            this.ControlBox = false;
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.saveButton);
@@ -918,10 +923,10 @@
             this.DisplayHeader = false;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "SettinsForm";
             this.Padding = new System.Windows.Forms.Padding(4, 30, 4, 4);
             this.Resizable = false;
+            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Style = MetroFramework.MetroColorStyle.Purple;
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -931,7 +936,6 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.actionModeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -977,7 +981,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel18;
         private MetroFramework.Controls.MetroLabel metroLabel19;
         private MetroFramework.Controls.MetroComboBox actionModeLeftBox;
-        private System.Windows.Forms.BindingSource actionModeBindingSource;
         private MetroFramework.Controls.MetroComboBox actionModeWheelUpBox;
         private MetroFramework.Controls.MetroComboBox actionModeWheelDownBox;
         private MetroFramework.Controls.MetroComboBox actionModeWheelBox;

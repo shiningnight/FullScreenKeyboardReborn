@@ -31,17 +31,17 @@ namespace FullScreenKeyboardReborn
             ComponentInit();
         }
 
-        public VirtualKey(String keyLabel, List<Point> bundary, Keys[] vkCodes)
+        public VirtualKey(string keyLabel, List<Point> bundary, Keys[] vkCodes)
         {
             EventsInit();
             ComponentInit();
 
-            Bundary = bundary;
+            Boundary = bundary;
             KeyLabel = keyLabel;
             VkCodes.AddRange(vkCodes);
-            if(vkCodes.Length == 1)
+            #region KeysTable
+            /*if(vkCodes.Length == 1)
             {
-                HookResponseCodes.Add((int)vkCodes[0]);
                 switch (vkCodes[0])
                 {
                     case Keys.KeyCode:
@@ -75,8 +75,6 @@ namespace FullScreenKeyboardReborn
                     case Keys.ShiftKey:
                         break;
                     case Keys.ControlKey:
-                        HookResponseCodes.Add(162);
-                        HookResponseCodes.Add(163);
                         break;
                     case Keys.Menu:
                         break;
@@ -403,7 +401,8 @@ namespace FullScreenKeyboardReborn
                     default:
                         break;
                 }
-            }
+            }*/
+            #endregion
         }
 
         private void Down()
@@ -473,9 +472,9 @@ namespace FullScreenKeyboardReborn
             // todo Designer Support fix: Override each following fields' Reset method, to avoid duplicated initializing, and to improve property window display(default value still gets bolded).
             Theme = MetroThemeStyle.Dark;
             Style = MetroColorStyle.Purple;
-            SetStyle(ControlStyles.Selectable, false);
             UseCustomForeColor = true;
             UseCustomBackColor = true;
+            SetStyle(ControlStyles.Selectable, false);
             ForeColor = NormalForeColor;
             BackColor = NormalBackColor;
             Font = NormalFont;
@@ -581,7 +580,7 @@ namespace FullScreenKeyboardReborn
 
             // todo Intergrated DdKey Repeat improvement: feature works, but not ideally(separeted mouse button).
 
-            this.MouseDown += new MouseEventHandler((sender, e) =>
+            MouseDown += new MouseEventHandler((sender, e) =>
                 {
                     switch (e.Button)
                     {
@@ -606,7 +605,7 @@ namespace FullScreenKeyboardReborn
                     //Repaint();
                 }
             );
-            this.MouseUp += new MouseEventHandler((sender, e) =>
+            MouseUp += new MouseEventHandler((sender, e) =>
                 {
                     switch (e.Button)
                     {
@@ -631,12 +630,12 @@ namespace FullScreenKeyboardReborn
                     //Repaint();
                 }
             );
-            this.MouseEnter += new EventHandler((sender, e) =>
+            MouseEnter += new EventHandler((sender, e) =>
                 {
                     Focus();
                 }
             );
-            this.MouseWheel += new MouseEventHandler((sender, e) =>
+            MouseWheel += new MouseEventHandler((sender, e) =>
                 {
                     if (e.Delta > 0)
                     {
@@ -656,7 +655,7 @@ namespace FullScreenKeyboardReborn
 
             Program.Hook.KeyEvent += new Program.KeyboardHookHandler((vkCode, eventType) =>
                 {
-                    if (HookResponseCodes.Contains(vkCode) || (VkCodes.Count == 1 && vkCode == (int)VkCodes[0]))
+                    if (VkCodes.Count == 1 && vkCode == (int)VkCodes[0])
                     {
                         switch (eventType)
                         {
@@ -692,14 +691,9 @@ namespace FullScreenKeyboardReborn
         private readonly Timer holdDelayTimer = new Timer(5);
 
         [Browsable(true)]
-        [Description("Virtual key codes that the button responses to.")]
+        [Description("Boundary points of the button.")]
         [Category("!VKProperties")]
-        public List<int> HookResponseCodes { get; set; } = new List<int>();
-
-        [Browsable(true)]
-        [Description("Bundary points of the button.")]
-        [Category("!VKProperties")]
-        public List<Point> Bundary { get; set; }
+        public List<Point> Boundary { get; set; }
 
         [Browsable(true)]
         [Description("Displayed label on the button. Alias of Text.")]
