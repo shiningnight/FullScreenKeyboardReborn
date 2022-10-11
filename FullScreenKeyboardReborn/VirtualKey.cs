@@ -31,12 +31,12 @@ namespace FullScreenKeyboardReborn
             ComponentInit();
         }
 
-        public VirtualKey(string keyLabel, List<Point> bundary, Keys[] vkCodes)
+        public VirtualKey(string keyLabel, List<Point> boundry, List<Keys> vkCodes)
         {
             EventsInit();
             ComponentInit();
 
-            Boundary = bundary;
+            Boundary = boundry;
             KeyLabel = keyLabel;
             VkCodes.AddRange(vkCodes);
             #region KeysTable
@@ -455,8 +455,15 @@ namespace FullScreenKeyboardReborn
 
         protected override void OnPaint(PaintEventArgs e)
         {
-
             base.OnPaint(e);
+            if (Boundary != null && Boundary.Count == 2)
+            {
+                Bounds = new Rectangle(Boundary[0], new Size(Boundary[1].X - Boundary[0].X, Boundary[1].Y - Boundary[0].Y));
+            }
+            else
+            {
+
+            }
         }
 
         private void Repaint()
@@ -693,7 +700,7 @@ namespace FullScreenKeyboardReborn
         [Browsable(true)]
         [Description("Boundary points of the button.")]
         [Category("!VKProperties")]
-        public List<Point> Boundary { get; set; }
+        public List<Point> Boundary { get; set; } = new List<Point>();
 
         [Browsable(true)]
         [Description("Displayed label on the button. Alias of Text.")]

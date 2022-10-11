@@ -1,6 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Text;
 using System.Windows.Forms;
+using FullScreenKeyboardReborn.Properties;
 using MetroFramework.Controls;
 using MetroFramework.Forms;
 
@@ -14,7 +19,9 @@ namespace FullScreenKeyboardReborn
         public MainBoard()
         {
             InitializeComponent();
+            settinsForm = new SettinsForm(this);
             Location = Program.KeyboardSettings.MainLastLocation;
+            LoadLayout(Program.KeyboardSettings.LayoutName);
             // todo Next version: Virtual Keyboard Layout Management feature(load Comfort Onscreen Keyboard -ish layout profile, maybe another layout editor.Manually coding out UI is acceptable? Never!)
         }
 
@@ -145,13 +152,78 @@ namespace FullScreenKeyboardReborn
             Environment.Exit(0);
         }
 
-        private void LoadLayout()
+        public void LoadLayout(string layoutName)
         {
-
+            using (var reader = new StreamReader($"Keyboards\\{layoutName}", Encoding.UTF8))
+            {
+                Controls.Clear();
+                while (!reader.EndOfStream)
+                {
+                    var line = reader.ReadLine();
+                    if (line[0] == ';')
+                    {
+                        continue;
+                    }
+                    else if (line[0] > '9' || line[0] < '0')
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        var parts = line.Split('=');
+                        var vkCodeParts = parts[0].Split(',');
+                        var vkCodes = new List<Keys>();
+                        foreach (var vkCode in vkCodeParts)
+                        {
+                            vkCodes.Add((Keys)Enum.Parse(typeof(Keys), vkCode));
+                        }
+                        
+                        var props = parts[1].Split(';');
+                        bool keyFinished = false;
+                        var boundry = new List<Point>();
+                        foreach (var p in props)
+                        {
+                            Console.WriteLine(p);
+                            if (p[0] == '-')
+                            {
+                                keyFinished = true;
+                            }
+                            else if (p[0] > '9' || p[0] < '0')
+                            {
+                                keyFinished = true;
+                            }
+                            //else if (p.Contains(props.Last()))
+                            //{
+                            //    keyFinished = true;
+                            //}
+                            else
+                            {
+                                Console.WriteLine($"{vkCodes[0]}:{p}");
+                                if (keyFinished)
+                                {
+                                    Controls.Add(new VirtualKey(vkCodes[0].ToString(), boundry, vkCodes));
+                                    Console.WriteLine($"addednew+{vkCodes[0]}:{p}");
+                                }
+                                else
+                                {
+                                    var pointParts = p.Split(',');
+                                    boundry.Add(new Point((int)(int.Parse(pointParts[0]) * Program.KeyboardSettings.ScaleFactor), (int)(int.Parse(pointParts[1]) * Program.KeyboardSettings.ScaleFactor)));
+                                    if (p.Contains(props.Last()))
+                                    {
+                                        Controls.Add(new VirtualKey(vkCodes[0].ToString(), boundry, vkCodes));
+                                        Console.WriteLine($"added+{vkCodes[0]}:{p}");
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                Console.WriteLine("f");
+            }
         }
 
         private GameBoard gameBoard = new GameBoard();
-        private SettinsForm settinsForm = new SettinsForm();
+        private SettinsForm settinsForm;
 
     }
 }

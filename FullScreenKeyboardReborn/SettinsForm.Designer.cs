@@ -81,13 +81,14 @@
             // 
             this.layouNameBox.FormattingEnabled = true;
             this.layouNameBox.ItemHeight = 23;
-            this.layouNameBox.Location = new System.Drawing.Point(61, 432);
+            this.layouNameBox.Location = new System.Drawing.Point(60, 432);
             this.layouNameBox.Name = "layouNameBox";
             this.layouNameBox.Size = new System.Drawing.Size(136, 29);
             this.layouNameBox.Style = MetroFramework.MetroColorStyle.Purple;
             this.layouNameBox.TabIndex = 2;
             this.layouNameBox.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.layouNameBox.UseSelectable = true;
+            this.layouNameBox.SelectedIndexChanged += new System.EventHandler(this.layouNameBox_SelectedIndexChanged);
             // 
             // metroLabel1
             // 
@@ -746,7 +747,7 @@
             // 
             this.saveButton.DisplayFocus = true;
             this.saveButton.Highlight = true;
-            this.saveButton.Location = new System.Drawing.Point(203, 437);
+            this.saveButton.Location = new System.Drawing.Point(204, 437);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 23);
             this.saveButton.Style = MetroFramework.MetroColorStyle.Purple;
@@ -796,7 +797,7 @@
             this.actionModeWheelUpBox.ItemHeight = 23;
             this.actionModeWheelUpBox.Location = new System.Drawing.Point(109, 176);
             this.actionModeWheelUpBox.Name = "actionModeWheelUpBox";
-            this.actionModeWheelUpBox.Size = new System.Drawing.Size(75, 29);
+            this.actionModeWheelUpBox.Size = new System.Drawing.Size(76, 29);
             this.actionModeWheelUpBox.Style = MetroFramework.MetroColorStyle.Purple;
             this.actionModeWheelUpBox.TabIndex = 38;
             this.actionModeWheelUpBox.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -808,7 +809,7 @@
             this.actionModeWheelDownBox.ItemHeight = 23;
             this.actionModeWheelDownBox.Location = new System.Drawing.Point(109, 138);
             this.actionModeWheelDownBox.Name = "actionModeWheelDownBox";
-            this.actionModeWheelDownBox.Size = new System.Drawing.Size(75, 29);
+            this.actionModeWheelDownBox.Size = new System.Drawing.Size(76, 29);
             this.actionModeWheelDownBox.Style = MetroFramework.MetroColorStyle.Purple;
             this.actionModeWheelDownBox.TabIndex = 37;
             this.actionModeWheelDownBox.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -820,7 +821,7 @@
             this.actionModeWheelBox.ItemHeight = 23;
             this.actionModeWheelBox.Location = new System.Drawing.Point(109, 96);
             this.actionModeWheelBox.Name = "actionModeWheelBox";
-            this.actionModeWheelBox.Size = new System.Drawing.Size(75, 29);
+            this.actionModeWheelBox.Size = new System.Drawing.Size(76, 29);
             this.actionModeWheelBox.Style = MetroFramework.MetroColorStyle.Purple;
             this.actionModeWheelBox.TabIndex = 36;
             this.actionModeWheelBox.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -830,9 +831,9 @@
             // 
             this.actionModeRightBox.FormattingEnabled = true;
             this.actionModeRightBox.ItemHeight = 23;
-            this.actionModeRightBox.Location = new System.Drawing.Point(109, 56);
+            this.actionModeRightBox.Location = new System.Drawing.Point(109, 57);
             this.actionModeRightBox.Name = "actionModeRightBox";
-            this.actionModeRightBox.Size = new System.Drawing.Size(75, 29);
+            this.actionModeRightBox.Size = new System.Drawing.Size(76, 29);
             this.actionModeRightBox.Style = MetroFramework.MetroColorStyle.Purple;
             this.actionModeRightBox.TabIndex = 35;
             this.actionModeRightBox.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -844,7 +845,7 @@
             this.actionModeLeftBox.ItemHeight = 23;
             this.actionModeLeftBox.Location = new System.Drawing.Point(109, 20);
             this.actionModeLeftBox.Name = "actionModeLeftBox";
-            this.actionModeLeftBox.Size = new System.Drawing.Size(75, 29);
+            this.actionModeLeftBox.Size = new System.Drawing.Size(76, 29);
             this.actionModeLeftBox.Style = MetroFramework.MetroColorStyle.Purple;
             this.actionModeLeftBox.TabIndex = 34;
             this.actionModeLeftBox.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -853,7 +854,7 @@
             // metroLabel15
             // 
             this.metroLabel15.AutoSize = true;
-            this.metroLabel15.Location = new System.Drawing.Point(9, 182);
+            this.metroLabel15.Location = new System.Drawing.Point(9, 183);
             this.metroLabel15.Name = "metroLabel15";
             this.metroLabel15.Size = new System.Drawing.Size(83, 19);
             this.metroLabel15.Style = MetroFramework.MetroColorStyle.Purple;
@@ -907,7 +908,7 @@
             // 
             // SettinsForm
             // 
-            // this.AutoScaleDimensions = new System.Drawing.SizeF(168F, 168F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -921,6 +922,7 @@
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.layouNameBox);
             this.DisplayHeader = false;
+            this.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "SettinsForm";

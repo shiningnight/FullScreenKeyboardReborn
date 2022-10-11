@@ -35,8 +35,8 @@ namespace FullScreenKeyboardReborn
             { Keys.RMenu, 604 },
             { Keys.LShiftKey, 500 },
             { Keys.RShiftKey, 511 },
-            { Keys.LWin, 602 },
-            { Keys.RWin, 602 },
+            { Keys.LWin, 601 },
+            { Keys.RWin, 605 },
         };
 
         [DllImport("Kernel32")]

@@ -13,8 +13,9 @@ namespace FullScreenKeyboardReborn
 {
     public partial class SettinsForm : MetroForm
     {
+        MainBoard mainBoard;
 
-        public SettinsForm()
+        public SettinsForm(MainBoard mainBoard)
         {
             InitializeComponent();
             layouNameBox.Items.AddRange(new DirectoryInfo("Keyboards").GetFiles("*.txt").ToList().Select(x => x.Name).ToArray());
@@ -43,6 +44,8 @@ namespace FullScreenKeyboardReborn
             cubeActionWheelUpBox.Text = settings.CubeActionWheelUp.ToString();
             cubeActionWheelDownBox.Text = settings.CubeActionWheelDown.ToString();
             layouNameBox.SelectedItem = settings.LayoutName.ToString();
+
+            this.mainBoard = mainBoard;
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -70,8 +73,7 @@ namespace FullScreenKeyboardReborn
                 settings.CubeActionWheelDown = (Keys)Enum.Parse(typeof(Keys),cubeActionWheelDownBox.Text);
                 settings.LayoutName = layouNameBox.Text;
                 Settings.Save(settings);
-                Close();
-                Dispose();
+                Hide();
             }
             catch (FormatException)
             {
@@ -82,14 +84,22 @@ namespace FullScreenKeyboardReborn
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-            Close();
-            Dispose();
+            mainBoard.LoadLayout(Program.KeyboardSettings.LayoutName);
+            Hide();
         }
 
         private void setKeyPress(object sender, KeyEventArgs e)
         {
             var box = (MetroTextBox)sender;
             box.Text = e.KeyCode.ToString();
+        }
+
+        private void layouNameBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (mainBoard != null)
+            {
+                mainBoard.LoadLayout(layouNameBox.Text);
+            }
         }
     }
 }
