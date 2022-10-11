@@ -37,6 +37,11 @@ namespace FullScreenKeyboardReborn
             ComponentInit();
 
             Boundary = boundry;
+            if (Boundary != null && Boundary.Count == 2)
+            {
+                Bounds = new Rectangle(Boundary[0], new Size(Boundary[1].X - Boundary[0].X, Boundary[1].Y - Boundary[0].Y));
+            }
+
             KeyLabel = keyLabel;
             VkCodes.AddRange(vkCodes);
             #region KeysTable
@@ -415,10 +420,12 @@ namespace FullScreenKeyboardReborn
 
         private void Up()
         {
+            VkCodes.Reverse();
             foreach (var keyCode in VkCodes)
             {
                 Program.Controller.Key(keyCode, 2);
             }
+            VkCodes.Reverse();
         }
 
         private void Strum()
@@ -455,14 +462,11 @@ namespace FullScreenKeyboardReborn
 
         protected override void OnPaint(PaintEventArgs e)
         {
+            //Console.WriteLine($"paint>{KeyLabel}");
             base.OnPaint(e);
-            if (Boundary != null && Boundary.Count == 2)
+            if (Boundary != null && Boundary.Count > 2)
             {
-                Bounds = new Rectangle(Boundary[0], new Size(Boundary[1].X - Boundary[0].X, Boundary[1].Y - Boundary[0].Y));
-            }
-            else
-            {
-
+                Bounds = new Rectangle(1000, 1000, 36, 36);
             }
         }
 

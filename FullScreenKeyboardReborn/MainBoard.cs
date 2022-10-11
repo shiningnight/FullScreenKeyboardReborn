@@ -116,7 +116,7 @@ namespace FullScreenKeyboardReborn
                 {
                     throw new NullReferenceException();
                 }
-                return (Rectangle) result;
+                return (Rectangle)result;
             }
         }
 
@@ -136,7 +136,7 @@ namespace FullScreenKeyboardReborn
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(!settinsForm.Visible)
+            if (!settinsForm.Visible)
             {
                 settinsForm.ShowDialog();
             }
@@ -177,7 +177,7 @@ namespace FullScreenKeyboardReborn
                         {
                             vkCodes.Add((Keys)Enum.Parse(typeof(Keys), vkCode));
                         }
-                        
+
                         var props = parts[1].Split(';');
                         bool keyFinished = false;
                         var boundry = new List<Point>();
@@ -187,33 +187,25 @@ namespace FullScreenKeyboardReborn
                             if (p[0] == '-')
                             {
                                 keyFinished = true;
+                                Controls.Add(new VirtualKey(vkCodes[0].ToString(), boundry, vkCodes));
+                                boundry = new List<Point>();
                             }
                             else if (p[0] > '9' || p[0] < '0')
                             {
                                 keyFinished = true;
+                                Controls.Add(new VirtualKey(vkCodes[0].ToString(), boundry, vkCodes));
                             }
-                            //else if (p.Contains(props.Last()))
-                            //{
-                            //    keyFinished = true;
-                            //}
                             else
                             {
                                 Console.WriteLine($"{vkCodes[0]}:{p}");
-                                if (keyFinished)
+                                var pointParts = p.Split(',');
+                                boundry.Add(new Point((int)(int.Parse(pointParts[0]) * Program.KeyboardSettings.ScaleFactor), (int)(int.Parse(pointParts[1]) * Program.KeyboardSettings.ScaleFactor)));
+                                if (p.Contains(props.Last()))
                                 {
                                     Controls.Add(new VirtualKey(vkCodes[0].ToString(), boundry, vkCodes));
-                                    Console.WriteLine($"addednew+{vkCodes[0]}:{p}");
+                                    Console.WriteLine($"added+{vkCodes[0]}:{p}");
                                 }
-                                else
-                                {
-                                    var pointParts = p.Split(',');
-                                    boundry.Add(new Point((int)(int.Parse(pointParts[0]) * Program.KeyboardSettings.ScaleFactor), (int)(int.Parse(pointParts[1]) * Program.KeyboardSettings.ScaleFactor)));
-                                    if (p.Contains(props.Last()))
-                                    {
-                                        Controls.Add(new VirtualKey(vkCodes[0].ToString(), boundry, vkCodes));
-                                        Console.WriteLine($"added+{vkCodes[0]}:{p}");
-                                    }
-                                }
+
                             }
                         }
                     }

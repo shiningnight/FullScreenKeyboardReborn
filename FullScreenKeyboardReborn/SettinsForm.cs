@@ -24,6 +24,13 @@ namespace FullScreenKeyboardReborn
             actionModeWheelBox.DataSource = Enum.GetNames(typeof(VirtualKey.ActionMode));
             actionModeWheelDownBox.DataSource = Enum.GetNames(typeof(VirtualKey.ActionMode));
             actionModeWheelUpBox.DataSource = Enum.GetNames(typeof(VirtualKey.ActionMode));
+            ReloadSettings();
+
+            this.mainBoard = mainBoard;
+        }
+
+        private void ReloadSettings()
+        {
             var settings = Program.KeyboardSettings;
             holdDelayBox.Text = settings.HoldDelay.ToString();
             pressDelayBox.Text = settings.PressDelay.ToString();
@@ -44,8 +51,6 @@ namespace FullScreenKeyboardReborn
             cubeActionWheelUpBox.Text = settings.CubeActionWheelUp.ToString();
             cubeActionWheelDownBox.Text = settings.CubeActionWheelDown.ToString();
             layouNameBox.SelectedItem = settings.LayoutName.ToString();
-
-            this.mainBoard = mainBoard;
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -84,6 +89,7 @@ namespace FullScreenKeyboardReborn
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
+            ReloadSettings();
             mainBoard.LoadLayout(Program.KeyboardSettings.LayoutName);
             Hide();
         }
