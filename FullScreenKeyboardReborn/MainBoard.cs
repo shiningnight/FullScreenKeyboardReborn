@@ -199,30 +199,32 @@ namespace FullScreenKeyboardReborn
                         bool keyFinished = false;
                         var boundry = new List<Point>();
                         var parameters = new Dictionary<string, string>();
+                        parameters["label"] = "";
                         foreach (var p in props)
                         {
-                            Console.WriteLine(p);
+                            //Console.WriteLine(p);
                             if (p[0] == '-')
                             {
-                                keyFinished = true;
-                                Controls.Add(new VirtualKey(vkCodes[0].ToString(), boundry, vkCodes));
+                                Controls.Add(new VirtualKey(parameters["label"], boundry, vkCodes, parameters));
                                 boundry = new List<Point>();
                             }
                             else if (p[0] > '9' || p[0] < '0')
                             {
-                                keyFinished = true;
-                                Controls.Add(new VirtualKey(vkCodes[0].ToString(), boundry, vkCodes));
-                                parameters.Add(p.Split(':')[0], p.Split(':')[1]);
+                                string[] kvPair = p.Split(':');
+                                parameters[kvPair[0]] = kvPair[1];
+                                if (!keyFinished)
+                                {
+                                    keyFinished = true;
+                                    Controls.Add(new VirtualKey(parameters["label"].ToString(), boundry, vkCodes, parameters));
+                                }
                             }
                             else
                             {
-                                //Console.WriteLine($"{vkCodes[0]}:{p}");
                                 var pointParts = p.Split(',');
                                 boundry.Add(new Point((int)(int.Parse(pointParts[0]) * scaleFactor), (int)(int.Parse(pointParts[1]) * scaleFactor)));
                                 if (p.Contains(props.Last()))
                                 {
-                                    Controls.Add(new VirtualKey(vkCodes[0].ToString(), boundry, vkCodes));
-                                    //Console.WriteLine($"added+{vkCodes[0]}:{p}");
+                                    Controls.Add(new VirtualKey(parameters["label"], boundry, vkCodes, parameters));
                                 }
 
                             }

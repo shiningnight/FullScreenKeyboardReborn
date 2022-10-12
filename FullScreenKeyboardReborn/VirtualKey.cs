@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
@@ -31,18 +32,41 @@ namespace FullScreenKeyboardReborn
             ComponentInit();
         }
 
-        public VirtualKey(string keyLabel, List<Point> boundry, List<Keys> vkCodes)
+        public VirtualKey(string keyLabel, List<Point> boundry, List<Keys> vkCodes, Dictionary<string, string> parameters)
         {
             EventsInit();
             ComponentInit();
 
             Boundary = boundry;
-            if (Boundary != null && Boundary.Count == 2)
+            if (Boundary.Count == 2)
             {
                 Bounds = new Rectangle(Boundary[0], new Size(Boundary[1].X - Boundary[0].X, Boundary[1].Y - Boundary[0].Y));
             }
+            else if (Boundary.Count > 2)
+            {
+                var Xs = new List<int>();
+                var Ys = new List<int>();
+                Boundary.ForEach(delegate (Point point)
+                {
+                    Xs.Add(point.X);
+                    Ys.Add(point.Y);
+                });
+                int xMin = Xs.Min();
+                int yMin = Ys.Min();
 
-            KeyLabel = keyLabel;
+                Location = new Point(xMin, yMin);
+
+                var points = new List<Point>();
+                Boundary.ForEach(delegate (Point point)
+                {
+                    points.Add(new Point(point.X - xMin, point.Y - yMin));
+                });
+                GraphicsPath graphicsPath = new GraphicsPath();
+                graphicsPath.AddClosedCurve(points.ToArray(), 0);
+                Region = new Region(graphicsPath);
+            }
+
+            KeyLabel = keyLabel == ""? vkCodes[0].ToString(): keyLabel;
             VkCodes.AddRange(vkCodes);
             #region KeysTable
             /*if(vkCodes.Length == 1)
@@ -464,10 +488,7 @@ namespace FullScreenKeyboardReborn
         {
             //Console.WriteLine($"paint>{KeyLabel}");
             base.OnPaint(e);
-            if (Boundary != null && Boundary.Count > 2)
-            {
-                Bounds = new Rectangle(1000, 1000, 36, 36);
-            }
+
         }
 
         private void Repaint()
