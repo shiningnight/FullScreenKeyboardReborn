@@ -130,6 +130,24 @@
     <value>130, 23</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="gameCubeGToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 34</value>
+  </data>
+  <data name="gameCubeGToolStripMenuItem.Text" xml:space="preserve">
+    <value>Game Cube(&amp;G)</value>
+  </data>
+  <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 34</value>
+  </data>
+  <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Settings(&amp;S)</value>
+  </data>
+  <data name="exitEToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 34</value>
+  </data>
+  <data name="exitEToolStripMenuItem.Text" xml:space="preserve">
+    <value>Exit(&amp;E)</value>
+  </data>
   <data name="contextMenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
     <value>233, 106</value>
   </data>
@@ -169,24 +187,6 @@
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="notifyIcon1.Visible" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="gameCubeGToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 34</value>
-  </data>
-  <data name="gameCubeGToolStripMenuItem.Text" xml:space="preserve">
-    <value>Game Cube(&amp;G)</value>
-  </data>
-  <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 34</value>
-  </data>
-  <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Settings(&amp;S)</value>
-  </data>
-  <data name="exitEToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 34</value>
-  </data>
-  <data name="exitEToolStripMenuItem.Text" xml:space="preserve">
-    <value>Exit(&amp;E)</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

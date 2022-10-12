@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FullScreenKeyboardReborn.Properties;
+using System;
 using System.Windows.Forms;
 
 namespace FullScreenKeyboardReborn
@@ -24,6 +25,7 @@ namespace FullScreenKeyboardReborn
                 Console.WriteLine(e);
                 Environment.Exit(-1);
             }
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainBoard());

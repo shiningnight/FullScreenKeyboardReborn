@@ -420,12 +420,12 @@ namespace FullScreenKeyboardReborn
 
         private void Up()
         {
-            VkCodes.Reverse();
+            //VkCodes.Reverse();
             foreach (var keyCode in VkCodes)
             {
                 Program.Controller.Key(keyCode, 2);
             }
-            VkCodes.Reverse();
+            //VkCodes.Reverse();
         }
 
         private void Strum()
@@ -700,6 +700,7 @@ namespace FullScreenKeyboardReborn
 
         private readonly Timer repeatTimer = new Timer(Program.KeyboardSettings.RepeatInterval);
         private readonly Timer holdDelayTimer = new Timer(5);
+
 
         [Browsable(true)]
         [Description("Boundary points of the button.")]
