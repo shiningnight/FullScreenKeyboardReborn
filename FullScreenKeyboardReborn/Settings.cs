@@ -30,7 +30,7 @@ namespace FullScreenKeyboardReborn
         public Keys CubeActionWheelUp = Keys.E;
         public Point CubeLastLocation = new Point(500, 500);
         public Point MainLastLocation = new Point(500, 500);
-        public double ScaleFactor = 1.58;
+        public decimal ScaleFactor = 1.58M;
 
         public static Settings Load() {
             Settings settings = new Settings();

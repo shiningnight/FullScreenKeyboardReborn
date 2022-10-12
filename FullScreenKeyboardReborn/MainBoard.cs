@@ -21,7 +21,7 @@ namespace FullScreenKeyboardReborn
             InitializeComponent();
             settinsForm = new SettinsForm(this);
             Location = Program.KeyboardSettings.MainLastLocation;
-            LoadLayout(Program.KeyboardSettings.LayoutName);
+            LoadLayout(Program.KeyboardSettings.LayoutName, Program.KeyboardSettings.ScaleFactor);
             // todo Next version: Virtual Keyboard Layout Management feature(load Comfort Onscreen Keyboard -ish layout profile, maybe another layout editor.Manually coding out UI is acceptable? Never!)
         }
 
@@ -169,7 +169,7 @@ namespace FullScreenKeyboardReborn
             Environment.Exit(0);
         }
 
-        public void LoadLayout(string layoutName)
+        public void LoadLayout(string layoutName, decimal scaleFactor)
         {
             using (var reader = new StreamReader($"Keyboards\\{layoutName}", Encoding.UTF8))
             {
@@ -218,7 +218,7 @@ namespace FullScreenKeyboardReborn
                             {
                                 //Console.WriteLine($"{vkCodes[0]}:{p}");
                                 var pointParts = p.Split(',');
-                                boundry.Add(new Point((int)(int.Parse(pointParts[0]) * Program.KeyboardSettings.ScaleFactor), (int)(int.Parse(pointParts[1]) * Program.KeyboardSettings.ScaleFactor)));
+                                boundry.Add(new Point((int)(int.Parse(pointParts[0]) * scaleFactor), (int)(int.Parse(pointParts[1]) * scaleFactor)));
                                 if (p.Contains(props.Last()))
                                 {
                                     Controls.Add(new VirtualKey(vkCodes[0].ToString(), boundry, vkCodes));

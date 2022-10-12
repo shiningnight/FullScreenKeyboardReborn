@@ -72,9 +72,12 @@
             this.metroLabel17 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel18 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel19 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel20 = new MetroFramework.Controls.MetroLabel();
+            this.scaleUpDown = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.scaleUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // layouNameBox
@@ -747,7 +750,7 @@
             // 
             this.saveButton.DisplayFocus = true;
             this.saveButton.Highlight = true;
-            this.saveButton.Location = new System.Drawing.Point(204, 437);
+            this.saveButton.Location = new System.Drawing.Point(202, 471);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 23);
             this.saveButton.Style = MetroFramework.MetroColorStyle.Purple;
@@ -760,7 +763,7 @@
             // cancelButton
             // 
             this.cancelButton.DisplayFocus = true;
-            this.cancelButton.Location = new System.Drawing.Point(317, 437);
+            this.cancelButton.Location = new System.Drawing.Point(315, 471);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.Style = MetroFramework.MetroColorStyle.Purple;
@@ -906,14 +909,59 @@
             this.metroLabel19.Text = "Left Click";
             this.metroLabel19.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
+            // metroLabel20
+            // 
+            this.metroLabel20.AutoSize = true;
+            this.metroLabel20.Location = new System.Drawing.Point(202, 437);
+            this.metroLabel20.Name = "metroLabel20";
+            this.metroLabel20.Size = new System.Drawing.Size(39, 19);
+            this.metroLabel20.Style = MetroFramework.MetroColorStyle.Purple;
+            this.metroLabel20.TabIndex = 35;
+            this.metroLabel20.Text = "Scale";
+            this.metroLabel20.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
+            // scaleUpDown
+            // 
+            this.scaleUpDown.BackColor = System.Drawing.SystemColors.InfoText;
+            this.scaleUpDown.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.scaleUpDown.DecimalPlaces = 2;
+            this.scaleUpDown.ForeColor = System.Drawing.SystemColors.Window;
+            this.scaleUpDown.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.scaleUpDown.Location = new System.Drawing.Point(272, 430);
+            this.scaleUpDown.Maximum = new decimal(new int[] {
+            35,
+            0,
+            0,
+            65536});
+            this.scaleUpDown.Minimum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.scaleUpDown.Name = "scaleUpDown";
+            this.scaleUpDown.Size = new System.Drawing.Size(120, 31);
+            this.scaleUpDown.TabIndex = 36;
+            this.scaleUpDown.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.scaleUpDown.ValueChanged += new System.EventHandler(this.scaleUpDown_ValueChanged);
+            // 
             // SettinsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(443, 491);
+            this.ClientSize = new System.Drawing.Size(505, 538);
             this.ControlBox = false;
+            this.Controls.Add(this.scaleUpDown);
+            this.Controls.Add(this.metroLabel20);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.saveButton);
@@ -924,6 +972,7 @@
             this.DisplayHeader = false;
             this.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "SettinsForm";
             this.Padding = new System.Windows.Forms.Padding(4, 30, 4, 4);
@@ -938,6 +987,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.scaleUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -987,5 +1037,7 @@
         private MetroFramework.Controls.MetroComboBox actionModeWheelDownBox;
         private MetroFramework.Controls.MetroComboBox actionModeWheelBox;
         private MetroFramework.Controls.MetroComboBox actionModeRightBox;
+        private MetroFramework.Controls.MetroLabel metroLabel20;
+        private System.Windows.Forms.NumericUpDown scaleUpDown;
     }
 }

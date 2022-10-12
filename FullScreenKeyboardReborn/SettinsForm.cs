@@ -51,6 +51,7 @@ namespace FullScreenKeyboardReborn
             cubeActionWheelUpBox.Text = settings.CubeActionWheelUp.ToString();
             cubeActionWheelDownBox.Text = settings.CubeActionWheelDown.ToString();
             layouNameBox.SelectedItem = settings.LayoutName.ToString();
+            scaleUpDown.Value = settings.ScaleFactor;
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -77,6 +78,7 @@ namespace FullScreenKeyboardReborn
                 settings.CubeActionWheelUp = (Keys)Enum.Parse(typeof(Keys),cubeActionWheelUpBox.Text);
                 settings.CubeActionWheelDown = (Keys)Enum.Parse(typeof(Keys),cubeActionWheelDownBox.Text);
                 settings.LayoutName = layouNameBox.Text;
+                settings.ScaleFactor = scaleUpDown.Value;
                 Settings.Save(settings);
                 Hide();
             }
@@ -90,7 +92,7 @@ namespace FullScreenKeyboardReborn
         private void cancelButton_Click(object sender, EventArgs e)
         {
             ReloadSettings();
-            mainBoard.LoadLayout(Program.KeyboardSettings.LayoutName);
+            mainBoard.LoadLayout(Program.KeyboardSettings.LayoutName, Program.KeyboardSettings.ScaleFactor);
             Hide();
         }
 
@@ -104,7 +106,15 @@ namespace FullScreenKeyboardReborn
         {
             if (mainBoard != null)
             {
-                mainBoard.LoadLayout(layouNameBox.Text);
+                mainBoard.LoadLayout(layouNameBox.Text, scaleUpDown.Value);
+            }
+        }
+
+        private void scaleUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            if (mainBoard != null)
+            {
+                mainBoard.LoadLayout(layouNameBox.Text, scaleUpDown.Value);
             }
         }
     }
