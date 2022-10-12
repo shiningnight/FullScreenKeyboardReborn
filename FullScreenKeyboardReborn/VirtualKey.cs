@@ -40,7 +40,8 @@ namespace FullScreenKeyboardReborn
             Boundary = boundry;
             if (Boundary.Count == 2)
             {
-                Bounds = new Rectangle(Boundary[0], new Size(Boundary[1].X - Boundary[0].X, Boundary[1].Y - Boundary[0].Y));
+                Location = Boundary[0];
+                Size = new Size(Boundary[1].X - Boundary[0].X, Boundary[1].Y - Boundary[0].Y);
             }
             else if (Boundary.Count > 2)
             {
@@ -55,7 +56,7 @@ namespace FullScreenKeyboardReborn
                 int yMin = Ys.Min();
 
                 Location = new Point(xMin, yMin);
-
+                Size = new Size(Xs.Max()-xMin, Ys.Max()-yMin);
                 var points = new List<Point>();
                 Boundary.ForEach(delegate (Point point)
                 {
