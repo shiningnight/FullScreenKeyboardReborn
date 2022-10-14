@@ -1,4 +1,5 @@
 ﻿using FullScreenKeyboardReborn.Properties;
+using MetroFramework.Components;
 using System;
 using System.Windows.Forms;
 
@@ -28,11 +29,14 @@ namespace FullScreenKeyboardReborn
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            MStyleManager.Theme = MetroFramework.MetroThemeStyle.Dark;
+            MStyleManager.Style = MetroFramework.MetroColorStyle.Purple;
             Application.Run(new MainBoard());
         }
 
         public static VkmController Controller { get; private set; }
         public static Settings KeyboardSettings = Settings.Load();
+        public static MetroStyleManager MStyleManager = new MetroStyleManager();
         public static KeyboardHook Hook = new KeyboardHook();
         public delegate void KeyboardHookHandler(int vkCode, KeyboardHook.EventType eventType);
     }

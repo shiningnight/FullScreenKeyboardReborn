@@ -23,8 +23,64 @@ namespace FullScreenKeyboardReborn
             HoldLock,
             Strum,
             Repeat,
-            RepeatLock
+            RepeatLock,
+            AutoShift
         }
+
+        public static Keys[] AutoHoldKeys = new Keys[] {
+            Keys.LControlKey,
+            Keys.RControlKey,
+            Keys.LMenu,
+            Keys.RMenu,
+            Keys.LShiftKey,
+            Keys.RShiftKey,
+            Keys.LWin,
+            Keys.RWin,
+        };
+
+        public static readonly Dictionary<Keys, string> DefaultKeyNames = new Dictionary<Keys, string>() {
+            { Keys.Enter, "Enter" },
+            { Keys.Escape, "Esc" },
+            { Keys.Space, "" },
+            { Keys.Back, "⬅" },
+            { Keys.Up, "⬆" },
+            { Keys.Down, "⬇" },
+            { Keys.Left, "⬅" },
+            { Keys.Right, "➡" },
+            { Keys.PageUp, "PgUp" },
+            { Keys.PageDown, "PgDn" },
+            { Keys.Insert, "Ins" },
+            { Keys.Delete, "Del" },
+            { Keys.PrintScreen, "PrtSc" },
+            { Keys.NumLock, "NumL" },
+            { Keys.CapsLock, "Caps" },
+            { Keys.Scroll, "ScrL" },
+            { Keys.Oemtilde, "`" },
+            { Keys.OemQuestion, "/" },
+            { Keys.OemPeriod, "." },
+            { Keys.Oemcomma, "," },
+            { Keys.OemSemicolon, ";" },
+            { Keys.OemQuotes, "\'" },
+            { Keys.OemOpenBrackets, "[" },
+            { Keys.OemCloseBrackets, "]" },
+            { Keys.OemMinus, "-" },
+            { Keys.Oemplus, "=" },
+            { Keys.OemPipe, "\\" },
+            { Keys.LControlKey, "Ctrl" },
+            { Keys.RControlKey, "Ctrl" },
+            { Keys.LMenu, "Alt" },
+            { Keys.RMenu, "Alt" },
+            { Keys.LShiftKey, "Shift" },
+            { Keys.RShiftKey, "Shift" },
+            { Keys.LWin, "Win" },
+            { Keys.RWin, "Win" },
+            { Keys.Add, "+" },
+            { Keys.Subtract, "-" },
+            { Keys.Multiply, "*" },
+            { Keys.Divide, "/" },
+            { Keys.Decimal, "." },
+            //↗↘↙↖
+        };
 
         public VirtualKey()
         {
@@ -42,6 +98,8 @@ namespace FullScreenKeyboardReborn
             {
                 Location = Boundary[0];
                 Size = new Size(Boundary[1].X - Boundary[0].X, Boundary[1].Y - Boundary[0].Y);
+                BoundryPath = GetRoundedRectPath(new Rectangle(0, 0, Width, Height), 10);
+                Region = new Region(BoundryPath);
             }
             else if (Boundary.Count > 2)
             {
@@ -56,18 +114,43 @@ namespace FullScreenKeyboardReborn
                 int yMin = Ys.Min();
 
                 Location = new Point(xMin, yMin);
-                Size = new Size(Xs.Max()-xMin, Ys.Max()-yMin);
+                Size = new Size(Xs.Max() - xMin, Ys.Max() - yMin);
                 var points = new List<Point>();
                 Boundary.ForEach(delegate (Point point)
                 {
                     points.Add(new Point(point.X - xMin, point.Y - yMin));
                 });
-                GraphicsPath graphicsPath = new GraphicsPath();
-                graphicsPath.AddClosedCurve(points.ToArray(), 0);
-                Region = new Region(graphicsPath);
+
+                BoundryPath.AddClosedCurve(points.ToArray(), 0);
+                Region = new Region(BoundryPath);
             }
 
-            KeyLabel = keyLabel == ""? vkCodes[0].ToString(): keyLabel;
+            string keyName = vkCodes[0].ToString();
+            if (keyLabel != "")
+            {
+                KeyLabel = keyLabel;
+            }
+            else if (DefaultKeyNames.ContainsKey(vkCodes[0]))
+            {
+                KeyLabel = DefaultKeyNames[vkCodes[0]];
+            }
+            else if (keyName.Contains("D") && keyName.Length == 2)
+            {
+                KeyLabel = keyName.Substring(1);
+            }
+            else if (keyName.Contains("Num") && keyName.Length == 7)
+            {
+                KeyLabel = keyName.Substring(6);
+            }
+            else if (keyName[0] <= 'Z' && keyName[0] >= 'A' && keyName.Length == 1)
+            {
+                KeyLabel = keyName.ToLower();
+            }
+            else
+            {
+                KeyLabel = keyName;
+            }
+
             VkCodes.AddRange(vkCodes);
             #region KeysTable
             /*if(vkCodes.Length == 1)
@@ -485,17 +568,69 @@ namespace FullScreenKeyboardReborn
             }
         }
 
+        private GraphicsPath GetRoundedRectPath(Rectangle rect, int radius)
+        {
+            int diameter = radius;
+            Rectangle arcRect = new Rectangle(rect.Location, new Size(diameter, diameter));
+            GraphicsPath path = new GraphicsPath();
+            path.AddArc(arcRect, 180, 90);
+            arcRect.X = rect.Right - diameter;
+            path.AddArc(arcRect, 270, 90);
+            arcRect.Y = rect.Bottom - diameter;
+            path.AddArc(arcRect, 0, 90);
+            arcRect.X = rect.Left;
+            path.AddArc(arcRect, 90, 90);
+            path.CloseFigure();
+            return path;
+        }
+
         protected override void OnPaint(PaintEventArgs e)
         {
-            //Console.WriteLine($"paint>{KeyLabel}");
             base.OnPaint(e);
+            if (Boundary == null)
+            {
+                return;
+            }
+            e.Graphics.Clear(BackColor);
+
+            if (Hovering)
+            {
+                //e.Graphics.DrawRectangle(new Pen(BorderColor, 2), 0, 0, Width, Height);
+                e.Graphics.DrawPath(new Pen(BorderColor, 2), BoundryPath);
+            }
+
+            StringFormat gs = new StringFormat();
+            gs.Alignment = StringAlignment.Center;
+            gs.LineAlignment = StringAlignment.Center;
+            e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            e.Graphics.DrawString(KeyLabel, Font, new SolidBrush(ForeColor), Width / 2, Height / 2, gs);
 
         }
 
         private void Repaint()
         {
-            ForeColor = Pressed ? PressedForeColor : NormalForeColor;
-            BackColor = Pressed ? PressedBackColor : NormalBackColor;
+            if (Repeating)
+            {
+                ForeColor = RepeatingForeColor;
+            }
+            else if (Pressed)
+            {
+                ForeColor = PressedForeColor;
+            }
+            else if (Hovering)
+            {
+                ForeColor = NormalForeColor;
+                BackColor = HoveringBackColor;
+            }
+            else
+            {
+                ForeColor = NormalForeColor;
+                BackColor = NormalBackColor;
+            }
+            if (Pressed)
+            {
+                BackColor = PressedBackColor;
+            }
             Refresh();
         }
 
@@ -503,11 +638,12 @@ namespace FullScreenKeyboardReborn
         {
             SuspendLayout();
             // todo Designer Support fix: Override each following fields' Reset method, to avoid duplicated initializing, and to improve property window display(default value still gets bolded).
-            Theme = MetroThemeStyle.Dark;
-            Style = MetroColorStyle.Purple;
+            //Theme = MetroThemeStyle.Dark;
+            //Style = MetroColorStyle.Purple;
             UseCustomForeColor = true;
             UseCustomBackColor = true;
             SetStyle(ControlStyles.Selectable, false);
+            //Highlight = true;
             ForeColor = NormalForeColor;
             BackColor = NormalBackColor;
             Font = NormalFont;
@@ -523,7 +659,14 @@ namespace FullScreenKeyboardReborn
                 case ActionMode.None:
                     break;
                 case ActionMode.Hold:
-                    Down();
+                    if (AutoHoldKeys.Contains(VkCodes[0]) && VkCodes.Count() == 1)
+                    {
+                        Toggle();
+                    }
+                    else
+                    {
+                        Down();
+                    }
                     //Holding = false;
                     //holdDelayTimer.Start();
                     break;
@@ -534,15 +677,21 @@ namespace FullScreenKeyboardReborn
                 case ActionMode.Repeat:
                     if (!Repeating)
                     {
+                        repeatTimer.Interval = Program.KeyboardSettings.RepeatInterval;
                         repeatTimer.Start();
                         Repeating = true;
                     }
                     break;
                 case ActionMode.RepeatLock:
                     break;
+                case ActionMode.AutoShift:
+                    Program.Controller.Key(Keys.LShiftKey, 0);
+                    Down();
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+            Repaint();
         }
 
         private void EndAction(ActionMode actionMode)
@@ -552,7 +701,14 @@ namespace FullScreenKeyboardReborn
                 case ActionMode.None:
                     break;
                 case ActionMode.Hold:
-                    Up();
+                    if (AutoHoldKeys.Contains(VkCodes[0]) && VkCodes.Count() == 1)
+                    {
+
+                    }
+                    else
+                    {
+                        Up();
+                    }
                     //if (!Holding)
                     //{
                     //    Up();
@@ -566,6 +722,7 @@ namespace FullScreenKeyboardReborn
                         break;
                     }
                     Toggle();
+                    HoldLocked = !HoldLocked;
                     break;
                 case ActionMode.Strum:
                     Strum();
@@ -575,6 +732,7 @@ namespace FullScreenKeyboardReborn
                     {
                         repeatTimer.Stop();
                         Repeating = false;
+                        Up();
                     }
                     break;
                 case ActionMode.RepeatLock:
@@ -586,20 +744,26 @@ namespace FullScreenKeyboardReborn
                     {
                         repeatTimer.Stop();
                         Repeating = false;
+                        Up();
                     }
                     else
                     {
                         BeginAction(ActionMode.Repeat);
                     }
                     break;
+                case ActionMode.AutoShift:
+                    Program.Controller.Key(Keys.LShiftKey, 2);
+                    Up();
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+            Repaint();
         }
 
         private void EventsInit()
         {
-            repeatTimer.Elapsed += delegate { Press(); };
+            repeatTimer.Elapsed += delegate { Down(); };
             holdDelayTimer.Elapsed += delegate
             {
                 holdTriggerTick -= 5;
@@ -635,7 +799,6 @@ namespace FullScreenKeyboardReborn
                         default:
                             throw new ArgumentOutOfRangeException();
                     }
-                    //Repaint();
                 }
             );
             MouseUp += new MouseEventHandler((sender, e) =>
@@ -660,12 +823,19 @@ namespace FullScreenKeyboardReborn
                         default:
                             throw new ArgumentOutOfRangeException();
                     }
-                    //Repaint();
                 }
             );
             MouseEnter += new EventHandler((sender, e) =>
                 {
                     Focus();
+                    Hovering = true;
+                    Repaint();
+                }
+            );
+            MouseLeave += new EventHandler((sender, e) =>
+                {
+                    Hovering = false;
+                    Repaint();
                 }
             );
             MouseWheel += new MouseEventHandler((sender, e) =>
@@ -682,7 +852,6 @@ namespace FullScreenKeyboardReborn
                     {
                         throw new ArgumentOutOfRangeException();
                     }
-                    //Repaint();
                 }
             );
 
@@ -705,24 +874,37 @@ namespace FullScreenKeyboardReborn
                         }
                         Repaint();
                     }
+                    if (AutoHoldKeys.Contains(VkCodes[0]) && VkCodes.Count == 1
+                    && eventType == KeyboardHook.EventType.Down && vkCode != (int)VkCodes[0]
+                    && !Repeating && !HoldLocked)
+                    {
+                        Up();
+                        Holding = false;
+                    }
                 }
             );
-
         }
 
-        private readonly Color NormalBackColor = Color.FromName("#202020");
-        private readonly Color PressedBackColor = Color.White;
+        private readonly Color NormalBackColor = MetroColors.Silver;
+        private readonly Color PressedBackColor = Color.LightCyan;
         private readonly Color NormalForeColor = Color.White;
         private readonly Color PressedForeColor = Color.Black;
-        private readonly Font NormalFont = new Font("宋体", 9, FontStyle.Bold);
+        private readonly Color HoveringBackColor = Color.DarkGray;
+        private readonly Color RepeatingForeColor = MetroColors.Red;
+        private readonly Color BorderColor = MetroColors.Blue;
+        private readonly Font NormalFont = new Font("monofur", 10, FontStyle.Regular);
+
         private int holdTriggerTick = Program.KeyboardSettings.HoldDelay;
         private bool Holding = false;
+        private bool HoldLocked = false;
         private bool Repeating = false;
+        private bool Hovering = false;
         private bool Pressed = false;
 
         private readonly Timer repeatTimer = new Timer(Program.KeyboardSettings.RepeatInterval);
         private readonly Timer holdDelayTimer = new Timer(5);
 
+        GraphicsPath BoundryPath = new GraphicsPath();
 
         [Browsable(true)]
         [Description("Boundary points of the button.")]

@@ -22,7 +22,8 @@ namespace FullScreenKeyboardReborn
             settinsForm = new SettinsForm(this);
             Location = Program.KeyboardSettings.MainLastLocation;
             LoadLayout(Program.KeyboardSettings.LayoutName, Program.KeyboardSettings.ScaleFactor);
-            // todo Next version: Virtual Keyboard Layout Management feature(load Comfort Onscreen Keyboard -ish layout profile, maybe another layout editor.Manually coding out UI is acceptable? Never!)
+            StyleManager = Program.MStyleManager;
+            // todo Next version: Another layout editor.Manually coding out UI is acceptable? Never!)
         }
 
 
@@ -215,7 +216,7 @@ namespace FullScreenKeyboardReborn
                                 if (!keyFinished)
                                 {
                                     keyFinished = true;
-                                    Controls.Add(new VirtualKey(parameters["label"].ToString(), boundry, vkCodes, parameters));
+                                    Controls.Add(new VirtualKey(parameters["label"], boundry, vkCodes, parameters));
                                 }
                             }
                             else

@@ -97,7 +97,6 @@
     <Compile Include="GameCube.Designer.cs">
       <DependentUpon>GameCube.cs</DependentUpon>
     </Compile>
-    <Compile Include="Global.cs" />
     <Compile Include="KeyboardHook.cs" />
     <Compile Include="GameBoard.cs">
       <SubType>Form</SubType>

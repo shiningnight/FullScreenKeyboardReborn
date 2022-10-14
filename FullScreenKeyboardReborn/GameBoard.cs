@@ -15,6 +15,7 @@ namespace FullScreenKeyboardReborn
         {
             InitializeComponent();
             Location = Program.KeyboardSettings.CubeLastLocation;
+            StyleManager = Program.MStyleManager;
         }
 
 
