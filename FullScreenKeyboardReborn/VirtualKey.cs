@@ -746,9 +746,13 @@ namespace FullScreenKeyboardReborn
                     else
                     {
                         Down();
+                        if (Program.KeyboardSettings.AllowRepeating)
+                        {
+                            repeatDelayTimer.Interval = Program.KeyboardSettings.RepeatDelay;
+                            repeatDelayTimer.Start();
+                            Holding = true;
+                        }
                     }
-                    //Holding = false;
-                    //holdDelayTimer.Start();
                     break;
                 case ActionMode.HoldLock:
                     break;
@@ -766,12 +770,12 @@ namespace FullScreenKeyboardReborn
                     break;
                 case ActionMode.AutoShift:
                     Program.Controller.Key(Keys.LShiftKey, 0);
-                    Down();
+                    BeginAction(ActionMode.Hold);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
-            Repaint();
+            //Repaint();
         }
 
         private void EndAction(ActionMode actionMode)
@@ -788,13 +792,17 @@ namespace FullScreenKeyboardReborn
                     else
                     {
                         Up();
+                        if (Holding && !Repeating)
+                        {
+                            repeatDelayTimer.Stop();
+                            Holding = false;
+                        }
+                        if (Repeating)
+                        {
+                            repeatTimer.Stop();
+                            Repeating = false;
+                        }
                     }
-                    //if (!Holding)
-                    //{
-                    //    Up();
-                    //}
-                    //holdDelayTimer.Stop();
-                    //holdTriggerTick = Program.KeyboardSettings.HoldDelay;
                     break;
                 case ActionMode.HoldLock:
                     if (Repeating)
@@ -832,30 +840,23 @@ namespace FullScreenKeyboardReborn
                     }
                     break;
                 case ActionMode.AutoShift:
+                    EndAction(ActionMode.Hold);
                     Program.Controller.Key(Keys.LShiftKey, 2);
-                    Up();
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
-            Repaint();
+            //Repaint();
         }
 
         private void EventsInit()
         {
             repeatTimer.Elapsed += delegate { Down(); };
-            holdDelayTimer.Elapsed += delegate
+            repeatDelayTimer.Elapsed += delegate
             {
-                holdTriggerTick -= 5;
-                if (holdTriggerTick <= 0)
-                {
-                    Holding = true;
-                    holdTriggerTick = Program.KeyboardSettings.HoldDelay;
-                    holdDelayTimer.Stop();
-                }
+                BeginAction(ActionMode.Repeat);
             };
-
-            // todo Intergrated DdKey Repeat improvement: feature works, but not ideally(separeted mouse button).
+            repeatDelayTimer.AutoReset = false;
 
             MouseDown += new MouseEventHandler((sender, e) =>
                 {
@@ -1076,7 +1077,7 @@ namespace FullScreenKeyboardReborn
         private string NormalKeyLabel;
         private string ShiftKeyLabel;
 
-        private int holdTriggerTick = Program.KeyboardSettings.HoldDelay;
+        private int repeatTriggerTick = Program.KeyboardSettings.RepeatDelay;
         private bool Holding = false;
         private bool HoldLocked = false;
         private bool Repeating = false;
@@ -1084,7 +1085,7 @@ namespace FullScreenKeyboardReborn
         private bool Pressed = false;
 
         private readonly Timer repeatTimer = new Timer(Program.KeyboardSettings.RepeatInterval);
-        private readonly Timer holdDelayTimer = new Timer(5);
+        private readonly Timer repeatDelayTimer = new Timer(Program.KeyboardSettings.RepeatDelay);
 
         GraphicsPath BoundryPath = new GraphicsPath();
 

@@ -9,7 +9,8 @@ namespace FullScreenKeyboardReborn
 {
     internal class Settings
     {
-        public int HoldDelay = 180;
+        public bool AllowRepeating = true;
+        public int RepeatDelay = 500;
         public int RepeatInterval = 32;
         public int PressDelay = 180;
         public int ActionDelay = 16;

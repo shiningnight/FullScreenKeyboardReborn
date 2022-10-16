@@ -32,7 +32,7 @@ namespace FullScreenKeyboardReborn
         private void ReloadSettings()
         {
             var settings = Program.KeyboardSettings;
-            holdDelayBox.Text = settings.HoldDelay.ToString();
+            holdDelayBox.Text = settings.RepeatDelay.ToString();
             pressDelayBox.Text = settings.PressDelay.ToString();
             actionDelayBox.Text = settings.ActionDelay.ToString();
             repeatIntervalBox.Text = settings.RepeatInterval.ToString();
@@ -59,7 +59,7 @@ namespace FullScreenKeyboardReborn
             var settings = Program.KeyboardSettings;
             try
             {
-                settings.HoldDelay = int.Parse(holdDelayBox.Text);
+                settings.RepeatDelay = int.Parse(holdDelayBox.Text);
                 settings.PressDelay = int.Parse(pressDelayBox.Text);
                 settings.ActionDelay = int.Parse(actionDelayBox.Text);
                 settings.RepeatInterval = int.Parse(repeatIntervalBox.Text);
