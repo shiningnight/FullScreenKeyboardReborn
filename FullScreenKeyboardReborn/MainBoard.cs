@@ -83,7 +83,7 @@ namespace FullScreenKeyboardReborn
 
         private void MainBoard_Load(object sender, EventArgs e)
         {
-            Program.Hook.Start();
+            Program.VKeyboard.Start();
             notifyIcon1.ShowBalloonTip(3);
         }
 
@@ -166,7 +166,7 @@ namespace FullScreenKeyboardReborn
             Program.KeyboardSettings.CubeLastLocation = gameBoard.Location;
             Settings.Save(Program.KeyboardSettings);
             notifyIcon1.Dispose();
-            Program.Hook.Stop();
+            Program.VKeyboard.Stop();
             Environment.Exit(0);
         }
 
@@ -232,7 +232,6 @@ namespace FullScreenKeyboardReborn
                         }
                     }
                 }
-                Console.WriteLine("f");
             }
         }
 

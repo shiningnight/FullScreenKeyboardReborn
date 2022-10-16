@@ -94,6 +94,7 @@ namespace FullScreenKeyboardReborn
             // 
             // virtualKey24
             // 
+            this.virtualKey24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.virtualKey24.Boundary = null;
             this.virtualKey24.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.virtualKey24.FontWeight = MetroFramework.MetroButtonWeight.Regular;
@@ -109,6 +110,7 @@ namespace FullScreenKeyboardReborn
             // 
             // virtualKey30
             // 
+            this.virtualKey30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.virtualKey30.Boundary = null;
             this.virtualKey30.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.virtualKey30.FontWeight = MetroFramework.MetroButtonWeight.Regular;
@@ -124,6 +126,7 @@ namespace FullScreenKeyboardReborn
             // 
             // virtualKey29
             // 
+            this.virtualKey29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.virtualKey29.Boundary = null;
             this.virtualKey29.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.virtualKey29.FontWeight = MetroFramework.MetroButtonWeight.Regular;
@@ -139,6 +142,7 @@ namespace FullScreenKeyboardReborn
             // 
             // virtualKey28
             // 
+            this.virtualKey28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.virtualKey28.Boundary = null;
             this.virtualKey28.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.virtualKey28.FontWeight = MetroFramework.MetroButtonWeight.Regular;
@@ -154,6 +158,7 @@ namespace FullScreenKeyboardReborn
             // 
             // virtualKey27
             // 
+            this.virtualKey27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.virtualKey27.Boundary = null;
             this.virtualKey27.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.virtualKey27.FontWeight = MetroFramework.MetroButtonWeight.Regular;
@@ -169,6 +174,7 @@ namespace FullScreenKeyboardReborn
             // 
             // virtualKey26
             // 
+            this.virtualKey26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.virtualKey26.Boundary = null;
             this.virtualKey26.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.virtualKey26.FontWeight = MetroFramework.MetroButtonWeight.Regular;
@@ -184,6 +190,7 @@ namespace FullScreenKeyboardReborn
             // 
             // virtualKey25
             // 
+            this.virtualKey25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.virtualKey25.Boundary = null;
             this.virtualKey25.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.virtualKey25.FontWeight = MetroFramework.MetroButtonWeight.Regular;
@@ -199,6 +206,7 @@ namespace FullScreenKeyboardReborn
             // 
             // virtualKey23
             // 
+            this.virtualKey23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.virtualKey23.Boundary = null;
             this.virtualKey23.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.virtualKey23.FontWeight = MetroFramework.MetroButtonWeight.Regular;
@@ -214,6 +222,7 @@ namespace FullScreenKeyboardReborn
             // 
             // virtualKey22
             // 
+            this.virtualKey22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.virtualKey22.Boundary = null;
             this.virtualKey22.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.virtualKey22.FontWeight = MetroFramework.MetroButtonWeight.Regular;
@@ -229,6 +238,7 @@ namespace FullScreenKeyboardReborn
             // 
             // virtualKey21
             // 
+            this.virtualKey21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.virtualKey21.Boundary = null;
             this.virtualKey21.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.virtualKey21.FontWeight = MetroFramework.MetroButtonWeight.Regular;
@@ -244,6 +254,7 @@ namespace FullScreenKeyboardReborn
             // 
             // virtualKey20
             // 
+            this.virtualKey20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.virtualKey20.Boundary = null;
             this.virtualKey20.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.virtualKey20.FontWeight = MetroFramework.MetroButtonWeight.Regular;
@@ -259,6 +270,7 @@ namespace FullScreenKeyboardReborn
             // 
             // virtualKey19
             // 
+            this.virtualKey19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.virtualKey19.Boundary = null;
             this.virtualKey19.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.virtualKey19.FontWeight = MetroFramework.MetroButtonWeight.Regular;
@@ -274,6 +286,7 @@ namespace FullScreenKeyboardReborn
             // 
             // virtualKey18
             // 
+            this.virtualKey18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.virtualKey18.Boundary = null;
             this.virtualKey18.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.virtualKey18.FontWeight = MetroFramework.MetroButtonWeight.Regular;
@@ -289,6 +302,7 @@ namespace FullScreenKeyboardReborn
             // 
             // virtualKey17
             // 
+            this.virtualKey17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.virtualKey17.Boundary = null;
             this.virtualKey17.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.virtualKey17.FontWeight = MetroFramework.MetroButtonWeight.Regular;
@@ -304,6 +318,7 @@ namespace FullScreenKeyboardReborn
             // 
             // virtualKey16
             // 
+            this.virtualKey16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.virtualKey16.Boundary = null;
             this.virtualKey16.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.virtualKey16.FontWeight = MetroFramework.MetroButtonWeight.Regular;
@@ -319,6 +334,7 @@ namespace FullScreenKeyboardReborn
             // 
             // virtualKey15
             // 
+            this.virtualKey15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.virtualKey15.Boundary = null;
             this.virtualKey15.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.virtualKey15.FontWeight = MetroFramework.MetroButtonWeight.Regular;
@@ -334,6 +350,7 @@ namespace FullScreenKeyboardReborn
             // 
             // virtualKey14
             // 
+            this.virtualKey14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.virtualKey14.Boundary = null;
             this.virtualKey14.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.virtualKey14.FontWeight = MetroFramework.MetroButtonWeight.Regular;
@@ -349,6 +366,7 @@ namespace FullScreenKeyboardReborn
             // 
             // virtualKey13
             // 
+            this.virtualKey13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.virtualKey13.Boundary = null;
             this.virtualKey13.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.virtualKey13.FontWeight = MetroFramework.MetroButtonWeight.Regular;
@@ -364,6 +382,7 @@ namespace FullScreenKeyboardReborn
             // 
             // virtualKey12
             // 
+            this.virtualKey12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.virtualKey12.Boundary = null;
             this.virtualKey12.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.virtualKey12.FontWeight = MetroFramework.MetroButtonWeight.Regular;
@@ -379,6 +398,7 @@ namespace FullScreenKeyboardReborn
             // 
             // virtualKey11
             // 
+            this.virtualKey11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.virtualKey11.Boundary = null;
             this.virtualKey11.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.virtualKey11.FontWeight = MetroFramework.MetroButtonWeight.Regular;
@@ -394,6 +414,7 @@ namespace FullScreenKeyboardReborn
             // 
             // virtualKey10
             // 
+            this.virtualKey10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.virtualKey10.Boundary = null;
             this.virtualKey10.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.virtualKey10.FontWeight = MetroFramework.MetroButtonWeight.Regular;
@@ -409,6 +430,7 @@ namespace FullScreenKeyboardReborn
             // 
             // virtualKey9
             // 
+            this.virtualKey9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.virtualKey9.Boundary = null;
             this.virtualKey9.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.virtualKey9.FontWeight = MetroFramework.MetroButtonWeight.Regular;
@@ -424,6 +446,7 @@ namespace FullScreenKeyboardReborn
             // 
             // virtualKey8
             // 
+            this.virtualKey8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.virtualKey8.Boundary = null;
             this.virtualKey8.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.virtualKey8.FontWeight = MetroFramework.MetroButtonWeight.Regular;
@@ -440,6 +463,7 @@ namespace FullScreenKeyboardReborn
             // 
             // virtualKey7
             // 
+            this.virtualKey7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.virtualKey7.Boundary = null;
             this.virtualKey7.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.virtualKey7.FontWeight = MetroFramework.MetroButtonWeight.Regular;
@@ -455,6 +479,7 @@ namespace FullScreenKeyboardReborn
             // 
             // virtualKey2
             // 
+            this.virtualKey2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.virtualKey2.Boundary = null;
             this.virtualKey2.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.virtualKey2.FontWeight = MetroFramework.MetroButtonWeight.Regular;
@@ -471,6 +496,7 @@ namespace FullScreenKeyboardReborn
             // 
             // virtualKey1
             // 
+            this.virtualKey1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.virtualKey1.Boundary = null;
             this.virtualKey1.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.virtualKey1.FontWeight = MetroFramework.MetroButtonWeight.Regular;
@@ -486,6 +512,7 @@ namespace FullScreenKeyboardReborn
             // 
             // virtualKey3
             // 
+            this.virtualKey3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.virtualKey3.Boundary = null;
             this.virtualKey3.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.virtualKey3.FontWeight = MetroFramework.MetroButtonWeight.Regular;
@@ -501,6 +528,7 @@ namespace FullScreenKeyboardReborn
             // 
             // virtualKey5
             // 
+            this.virtualKey5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.virtualKey5.Boundary = null;
             this.virtualKey5.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.virtualKey5.FontWeight = MetroFramework.MetroButtonWeight.Regular;
@@ -516,6 +544,7 @@ namespace FullScreenKeyboardReborn
             // 
             // virtualKey4
             // 
+            this.virtualKey4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.virtualKey4.Boundary = null;
             this.virtualKey4.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.virtualKey4.FontWeight = MetroFramework.MetroButtonWeight.Regular;
@@ -532,6 +561,7 @@ namespace FullScreenKeyboardReborn
             // 
             // virtualKey6
             // 
+            this.virtualKey6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.virtualKey6.Boundary = null;
             this.virtualKey6.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.virtualKey6.FontWeight = MetroFramework.MetroButtonWeight.Regular;

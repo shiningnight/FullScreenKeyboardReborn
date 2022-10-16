@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Threading;
 using System.Windows.Forms;
 using MetroFramework;
@@ -51,7 +52,7 @@ namespace FullScreenKeyboardReborn
             { Keys.PageDown, "PgDn" },
             { Keys.Insert, "Ins" },
             { Keys.Delete, "Del" },
-            { Keys.PrintScreen, "PrtSc" },
+            { Keys.PrintScreen, "\uf030" },//📸
             { Keys.NumLock, "NumL" },
             { Keys.CapsLock, "Caps" },
             { Keys.Scroll, "ScrL" },
@@ -66,20 +67,57 @@ namespace FullScreenKeyboardReborn
             { Keys.OemMinus, "-" },
             { Keys.Oemplus, "=" },
             { Keys.OemPipe, "\\" },
+            { Keys.ControlKey, "Ctrl" },
             { Keys.LControlKey, "Ctrl" },
             { Keys.RControlKey, "Ctrl" },
+            { Keys.Menu, "Alt" },
             { Keys.LMenu, "Alt" },
             { Keys.RMenu, "Alt" },
+            { Keys.ShiftKey, "Shift" },
             { Keys.LShiftKey, "Shift" },
             { Keys.RShiftKey, "Shift" },
-            { Keys.LWin, "Win" },
-            { Keys.RWin, "Win" },
+            { Keys.LWin, "\uf17a" },
+            { Keys.RWin, "\uf17a" },
             { Keys.Add, "+" },
             { Keys.Subtract, "-" },
             { Keys.Multiply, "*" },
             { Keys.Divide, "/" },
             { Keys.Decimal, "." },
             //↗↘↙↖
+        };
+        public static readonly Dictionary<Keys, string> ShiftKeyNames = new Dictionary<Keys, string>() {
+            { Keys.Oemtilde, "~" },
+            { Keys.OemQuestion, "?" },
+            { Keys.OemPeriod, ">" },
+            { Keys.Oemcomma, "<" },
+            { Keys.OemSemicolon, ":" },
+            { Keys.OemQuotes, "\"" },
+            { Keys.OemOpenBrackets, "{" },
+            { Keys.OemCloseBrackets, "}" },
+            { Keys.OemMinus, "_" },
+            { Keys.Oemplus, "+" },
+            { Keys.OemPipe, "|" },
+            { Keys.Decimal, "Del" },
+            { Keys.NumPad0, "Ins" },
+            { Keys.NumPad2, "⬇" },
+            { Keys.NumPad4, "⬅" },
+            { Keys.NumPad6, "➡" },
+            { Keys.NumPad8, "⬆" },
+            { Keys.NumPad1, "End" },
+            { Keys.NumPad3, "PgDn" },
+            { Keys.NumPad5, "" },
+            { Keys.NumPad7, "Home" },
+            { Keys.NumPad9, "PgUp" },
+            { Keys.D0, ")" },
+            { Keys.D1, "!" },
+            { Keys.D2, "@" },
+            { Keys.D3, "#" },
+            { Keys.D4, "$" },
+            { Keys.D5, "%" },
+            { Keys.D6, "^" },
+            { Keys.D7, "&" },
+            { Keys.D8, "*" },
+            { Keys.D9, "(" },
         };
 
         public VirtualKey()
@@ -144,11 +182,53 @@ namespace FullScreenKeyboardReborn
             }
             else if (keyName[0] <= 'Z' && keyName[0] >= 'A' && keyName.Length == 1)
             {
-                KeyLabel = keyName.ToLower();
+                if (!Program.VKeyboard.LockStatus[Keys.CapsLock])
+                {
+                    KeyLabel = keyName.ToLower();
+                }
+                else
+                {
+                    KeyLabel = keyName.ToUpper();
+                }
             }
             else
             {
                 KeyLabel = keyName;
+            }
+
+            NormalKeyLabel = KeyLabel.ToString();
+            if (vkCodes.Count == 1 && ShiftKeyNames.ContainsKey(vkCodes[0]))
+            {
+                ShiftKeyLabel = ShiftKeyNames[vkCodes[0]];
+            }
+            else
+            {
+                ShiftKeyLabel = "";
+            }
+
+            if (vkCodes.Count == 1
+            && ((vkCodes[0] >= Keys.NumPad0 && vkCodes[0] <= Keys.NumPad9) || vkCodes[0] == Keys.Decimal)
+            )
+            {
+                if (Program.VKeyboard.LockStatus[Keys.NumLock])
+                {
+                    KeyLabel = NormalKeyLabel;
+                }
+                else
+                {
+                    KeyLabel = ShiftKeyLabel;
+                }
+            }
+
+            if (KeyLabel.Length > 0 && KeyLabel[0] >= '\uf000')
+            {
+                Font = NormalIconFont;
+            }
+
+            if (vkCodes.Count == 1 && Program.VKeyboard.LockStatus.ContainsKey(vkCodes[0]))
+            {
+                Pressed = Program.VKeyboard.LockStatus[vkCodes[0]];
+                Repaint();
             }
 
             VkCodes.AddRange(vkCodes);
@@ -592,11 +672,10 @@ namespace FullScreenKeyboardReborn
                 return;
             }
             e.Graphics.Clear(BackColor);
-
             if (Hovering)
             {
                 //e.Graphics.DrawRectangle(new Pen(BorderColor, 2), 0, 0, Width, Height);
-                e.Graphics.DrawPath(new Pen(BorderColor, 2), BoundryPath);
+                e.Graphics.DrawPath(new Pen(BorderColor, 3), BoundryPath);
             }
 
             StringFormat gs = new StringFormat();
@@ -604,6 +683,7 @@ namespace FullScreenKeyboardReborn
             gs.LineAlignment = StringAlignment.Center;
             e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             e.Graphics.DrawString(KeyLabel, Font, new SolidBrush(ForeColor), Width / 2, Height / 2, gs);
+            //e.Graphics.DrawString(KeyLabel, Font, new SolidBrush(ForeColor), new RectangleF(0, 0, Width, Height), gs);
 
         }
 
@@ -855,34 +935,132 @@ namespace FullScreenKeyboardReborn
                 }
             );
 
-            Program.Hook.KeyEvent += new Program.KeyboardHookHandler((vkCode, eventType) =>
+            Program.VKeyboard.KeyEvent += new Program.KeyboardEventHandler((vkCode, eventType) =>
                 {
-                    if (VkCodes.Count == 1 && vkCode == (int)VkCodes[0])
+                    if (VkCodes.Count == 1 && vkCode == VkCodes[0])
                     {
                         switch (eventType)
                         {
-                            case KeyboardHook.EventType.Down:
+                            case Keyboard.EventType.Down:
                                 Pressed = true;
                                 break;
-                            case KeyboardHook.EventType.Up:
+                            case Keyboard.EventType.Up:
                                 Pressed = false;
                                 break;
-                            case KeyboardHook.EventType.Press:
+                            case Keyboard.EventType.Press:
                                 break;
                             default:
                                 break;
                         }
                         Repaint();
                     }
-                    if (AutoHoldKeys.Contains(VkCodes[0]) && VkCodes.Count == 1
-                    && eventType == KeyboardHook.EventType.Down && vkCode != (int)VkCodes[0]
+
+                    if (!AutoHoldKeys.Contains(vkCode)
+                    && VkCodes.Count == 1 && AutoHoldKeys.Contains(VkCodes[0])
+                    && eventType == Keyboard.EventType.Up && vkCode != VkCodes[0]
                     && !Repeating && !HoldLocked)
                     {
                         Up();
                         Holding = false;
                     }
+
+                    if ((ShiftKeyNames.ContainsKey(VkCodes[0]) || (VkCodes[0] >= Keys.A && VkCodes[0] <= Keys.Z)) && VkCodes.Count == 1
+                    && (vkCode == Keys.LShiftKey || vkCode == Keys.RShiftKey)
+                    )
+                    {
+                        if (VkCodes.Count == 1
+                        && ((VkCodes[0] >= Keys.NumPad0 && VkCodes[0] <= Keys.NumPad9) || VkCodes[0] == Keys.Decimal)
+                        && !Program.VKeyboard.LockStatus[Keys.NumLock])
+                        {
+
+                        }
+                        else
+                        {
+                            switch (eventType)
+                            {
+                                case Keyboard.EventType.Down:
+                                    if (VkCodes[0] >= Keys.A && VkCodes[0] <= Keys.Z)
+                                    {
+                                        if (!Program.VKeyboard.LockStatus[Keys.CapsLock])
+                                        {
+                                            KeyLabel = KeyLabel.ToUpper();
+                                        }
+                                        else
+                                        {
+                                            KeyLabel = KeyLabel.ToLower();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        KeyLabel = ShiftKeyLabel;
+                                    }
+                                    break;
+                                case Keyboard.EventType.Up:
+                                    if (VkCodes[0] >= Keys.A && VkCodes[0] <= Keys.Z)
+                                    {
+                                        if (!Program.VKeyboard.LockStatus[Keys.CapsLock])
+                                        {
+                                            KeyLabel = KeyLabel.ToLower();
+                                        }
+                                        else
+                                        {
+                                            KeyLabel = KeyLabel.ToUpper();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        KeyLabel = NormalKeyLabel;
+                                    }
+                                    break;
+                                case Keyboard.EventType.Press:
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                    }
+
                 }
             );
+
+            Program.VKeyboard.LockEvent += OnKeyboardLockChange;
+        }
+
+        private void OnKeyboardLockChange(Keys lockKey, bool isOn)
+        {
+            if (VkCodes.Count == 1
+            && ((VkCodes[0] >= Keys.NumPad0 && VkCodes[0] <= Keys.NumPad9) || VkCodes[0] == Keys.Decimal)
+            && lockKey == Keys.NumLock
+            )
+            {
+                if (isOn)
+                {
+                    KeyLabel = NormalKeyLabel;
+                }
+                else
+                {
+                    KeyLabel = ShiftKeyLabel;
+                }
+            }
+            else if (VkCodes.Count == 1
+            && (VkCodes[0] >= Keys.A && VkCodes[0] <= Keys.Z)
+            && lockKey == Keys.CapsLock
+            )
+            {
+                if (isOn)
+                {
+                    KeyLabel = KeyLabel.ToUpper();
+                }
+                else
+                {
+                    KeyLabel = KeyLabel.ToLower();
+                }
+            }
+            else if (VkCodes.Count == 1 && VkCodes[0] == lockKey)
+            {
+                Pressed = isOn;
+                Repaint();
+            }
         }
 
         private readonly Color NormalBackColor = MetroColors.Silver;
@@ -893,6 +1071,10 @@ namespace FullScreenKeyboardReborn
         private readonly Color RepeatingForeColor = MetroColors.Red;
         private readonly Color BorderColor = MetroColors.Blue;
         private readonly Font NormalFont = new Font("monofur", 10, FontStyle.Regular);
+        private readonly Font NormalIconFont = new Font(Program.IconFontFamily, 10, FontStyle.Regular);
+
+        private string NormalKeyLabel;
+        private string ShiftKeyLabel;
 
         private int holdTriggerTick = Program.KeyboardSettings.HoldDelay;
         private bool Holding = false;

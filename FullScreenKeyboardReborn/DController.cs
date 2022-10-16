@@ -69,7 +69,7 @@ namespace FullScreenKeyboardReborn
 
         public DController()
         {
-            Load("ddx64.dll");
+            Load("ExternalLibs\\DD64.dll");
         }
 
         public DController(string dllPath)

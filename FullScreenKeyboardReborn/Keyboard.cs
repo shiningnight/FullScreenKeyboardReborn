@@ -5,10 +5,11 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static FullScreenKeyboardReborn.Keyboard;
 
 namespace FullScreenKeyboardReborn
 {
-    internal class KeyboardHook
+    internal class Keyboard
     {
 
         [StructLayout(LayoutKind.Sequential)]
@@ -20,6 +21,13 @@ namespace FullScreenKeyboardReborn
             public int time;
             public int dwExtraInfo;
         }
+
+        public Dictionary<Keys, bool> LockStatus = new Dictionary<Keys, bool>()
+        {
+            {Keys.NumLock, false},
+            {Keys.CapsLock, false},
+            {Keys.Scroll, false},
+        };
         public enum EventType
         {
             Down,
@@ -34,10 +42,11 @@ namespace FullScreenKeyboardReborn
         public const int WM_SYSKEYUP = 0x105;
 
         public delegate int HookProc(int nCode, Int32 wParam, IntPtr lParam);
-        public event Program.KeyboardHookHandler KeyEvent;
+        public event Program.KeyboardEventHandler KeyEvent;
+        public event Program.KeyboardLockEventHandler LockEvent;
 
         private HookProc KeyboardHookProcedure;
-        private static int hKeyboardHook = 0; 
+        private static int hKeyboardHook = 0;
 
         [DllImport("user32.dll", CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]
         public static extern int SetWindowsHookEx(int idHook, HookProc lpfn, IntPtr hInstance, int threadId);
@@ -50,6 +59,9 @@ namespace FullScreenKeyboardReborn
 
         [DllImport("kernel32.dll")]
         public static extern IntPtr GetModuleHandle(string name);
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]
+        private static extern short GetKeyState(int vKey);
 
         public void Start()
         {
@@ -88,18 +100,41 @@ namespace FullScreenKeyboardReborn
 
                 if (wParam == WM_KEYDOWN || wParam == WM_SYSKEYDOWN)
                 {
-                    KeyEvent(keyboardMessage.vkCode, EventType.Down);
+                    KeyEvent((Keys)keyboardMessage.vkCode, EventType.Down);
                 }
 
                 if (wParam == WM_KEYUP || wParam == WM_SYSKEYUP)
                 {
-                    KeyEvent(keyboardMessage.vkCode, EventType.Up);
+                    KeyEvent((Keys)keyboardMessage.vkCode, EventType.Up);
+                }
+
+                if (((Keys)keyboardMessage.vkCode == Keys.CapsLock
+                    || (Keys)keyboardMessage.vkCode == Keys.NumLock
+                    || (Keys)keyboardMessage.vkCode == Keys.Scroll)
+                    //&& (wParam == WM_KEYUP || wParam == WM_SYSKEYUP)
+                    && LockEvent != null)
+                {
+                    UpdateLockStatus();
+                    LockEvent((Keys)keyboardMessage.vkCode, (((ushort)GetKeyState(keyboardMessage.vkCode)) & 1) != 0);
                 }
 
             }
             return CallNextHookEx(hKeyboardHook, nCode, wParam, lParam);
         }
-        ~KeyboardHook()
+
+        public Keyboard()
+        {
+            UpdateLockStatus();
+        }
+
+        private void UpdateLockStatus()
+        {
+            LockStatus[Keys.NumLock] = ((ushort)GetKeyState((int)Keys.NumLock) & 1) != 0;
+            LockStatus[Keys.CapsLock] = ((ushort)GetKeyState((int)Keys.CapsLock) & 1) != 0;
+            LockStatus[Keys.Scroll] = ((ushort)GetKeyState((int)Keys.Scroll) & 1) != 0;
+        }
+
+        ~Keyboard()
         {
             Stop();
         }
