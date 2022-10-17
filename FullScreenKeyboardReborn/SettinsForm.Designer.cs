@@ -32,7 +32,7 @@
             this.layouNameBox = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.holdDelayBox = new MetroFramework.Controls.MetroTextBox();
+            this.repeatDelayBox = new MetroFramework.Controls.MetroTextBox();
             this.pressDelayBox = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.actionDelayBox = new MetroFramework.Controls.MetroTextBox();
@@ -57,11 +57,7 @@
             this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
             this.cubeActionWheelBox = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.saveButton = new MetroFramework.Controls.MetroButton();
-            this.cancelButton = new MetroFramework.Controls.MetroButton();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.actionModeWheelUpBox = new MetroFramework.Controls.MetroComboBox();
             this.actionModeWheelDownBox = new MetroFramework.Controls.MetroComboBox();
             this.actionModeWheelBox = new MetroFramework.Controls.MetroComboBox();
@@ -74,17 +70,36 @@
             this.metroLabel19 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel20 = new MetroFramework.Controls.MetroLabel();
             this.scaleUpDown = new System.Windows.Forms.NumericUpDown();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.metroLabel21 = new MetroFramework.Controls.MetroLabel();
+            this.repeatToggle = new MetroFramework.Controls.MetroToggle();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.scaleTrackbar = new MetroFramework.Controls.MetroTrackBar();
+            this.cancelButton = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.scaleUpDown)).BeginInit();
+            this.metroTabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // layouNameBox
             // 
             this.layouNameBox.FormattingEnabled = true;
             this.layouNameBox.ItemHeight = 23;
-            this.layouNameBox.Location = new System.Drawing.Point(60, 432);
+            this.layouNameBox.Location = new System.Drawing.Point(60, 16);
             this.layouNameBox.Name = "layouNameBox";
             this.layouNameBox.Size = new System.Drawing.Size(136, 29);
             this.layouNameBox.Style = MetroFramework.MetroColorStyle.Purple;
@@ -96,7 +111,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(7, 437);
+            this.metroLabel1.Location = new System.Drawing.Point(7, 21);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(47, 19);
             this.metroLabel1.Style = MetroFramework.MetroColorStyle.Purple;
@@ -107,47 +122,47 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(9, 21);
+            this.metroLabel2.Location = new System.Drawing.Point(3, 17);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(73, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(86, 19);
             this.metroLabel2.Style = MetroFramework.MetroColorStyle.Purple;
             this.metroLabel2.TabIndex = 4;
-            this.metroLabel2.Text = "Hold Delay";
+            this.metroLabel2.Text = "Repeat Delay";
             this.metroLabel2.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // holdDelayBox
+            // repeatDelayBox
             // 
             // 
             // 
             // 
-            this.holdDelayBox.CustomButton.Image = null;
-            this.holdDelayBox.CustomButton.Location = new System.Drawing.Point(53, 1);
-            this.holdDelayBox.CustomButton.Name = "";
-            this.holdDelayBox.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.holdDelayBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.holdDelayBox.CustomButton.TabIndex = 1;
-            this.holdDelayBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.holdDelayBox.CustomButton.UseSelectable = true;
-            this.holdDelayBox.CustomButton.Visible = false;
-            this.holdDelayBox.Lines = new string[] {
+            this.repeatDelayBox.CustomButton.Image = null;
+            this.repeatDelayBox.CustomButton.Location = new System.Drawing.Point(53, 1);
+            this.repeatDelayBox.CustomButton.Name = "";
+            this.repeatDelayBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.repeatDelayBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.repeatDelayBox.CustomButton.TabIndex = 1;
+            this.repeatDelayBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.repeatDelayBox.CustomButton.UseSelectable = true;
+            this.repeatDelayBox.CustomButton.Visible = false;
+            this.repeatDelayBox.Lines = new string[] {
         "metroTextBox1"};
-            this.holdDelayBox.Location = new System.Drawing.Point(109, 21);
-            this.holdDelayBox.MaxLength = 32767;
-            this.holdDelayBox.Name = "holdDelayBox";
-            this.holdDelayBox.PasswordChar = '\0';
-            this.holdDelayBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.holdDelayBox.SelectedText = "";
-            this.holdDelayBox.SelectionLength = 0;
-            this.holdDelayBox.SelectionStart = 0;
-            this.holdDelayBox.ShortcutsEnabled = true;
-            this.holdDelayBox.Size = new System.Drawing.Size(75, 23);
-            this.holdDelayBox.Style = MetroFramework.MetroColorStyle.Purple;
-            this.holdDelayBox.TabIndex = 5;
-            this.holdDelayBox.Text = "metroTextBox1";
-            this.holdDelayBox.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.holdDelayBox.UseSelectable = true;
-            this.holdDelayBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.holdDelayBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.repeatDelayBox.Location = new System.Drawing.Point(103, 17);
+            this.repeatDelayBox.MaxLength = 32767;
+            this.repeatDelayBox.Name = "repeatDelayBox";
+            this.repeatDelayBox.PasswordChar = '\0';
+            this.repeatDelayBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.repeatDelayBox.SelectedText = "";
+            this.repeatDelayBox.SelectionLength = 0;
+            this.repeatDelayBox.SelectionStart = 0;
+            this.repeatDelayBox.ShortcutsEnabled = true;
+            this.repeatDelayBox.Size = new System.Drawing.Size(75, 23);
+            this.repeatDelayBox.Style = MetroFramework.MetroColorStyle.Purple;
+            this.repeatDelayBox.TabIndex = 5;
+            this.repeatDelayBox.Text = "metroTextBox1";
+            this.repeatDelayBox.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.repeatDelayBox.UseSelectable = true;
+            this.repeatDelayBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.repeatDelayBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // pressDelayBox
             // 
@@ -165,7 +180,7 @@
             this.pressDelayBox.CustomButton.Visible = false;
             this.pressDelayBox.Lines = new string[] {
         "metroTextBox2"};
-            this.pressDelayBox.Location = new System.Drawing.Point(109, 63);
+            this.pressDelayBox.Location = new System.Drawing.Point(103, 59);
             this.pressDelayBox.MaxLength = 32767;
             this.pressDelayBox.Name = "pressDelayBox";
             this.pressDelayBox.PasswordChar = '\0';
@@ -186,7 +201,7 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(9, 63);
+            this.metroLabel3.Location = new System.Drawing.Point(3, 59);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(75, 19);
             this.metroLabel3.Style = MetroFramework.MetroColorStyle.Purple;
@@ -210,7 +225,7 @@
             this.actionDelayBox.CustomButton.Visible = false;
             this.actionDelayBox.Lines = new string[] {
         "metroTextBox3"};
-            this.actionDelayBox.Location = new System.Drawing.Point(109, 104);
+            this.actionDelayBox.Location = new System.Drawing.Point(103, 100);
             this.actionDelayBox.MaxLength = 32767;
             this.actionDelayBox.Name = "actionDelayBox";
             this.actionDelayBox.PasswordChar = '\0';
@@ -231,7 +246,7 @@
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(9, 104);
+            this.metroLabel4.Location = new System.Drawing.Point(3, 100);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(82, 19);
             this.metroLabel4.Style = MetroFramework.MetroColorStyle.Purple;
@@ -255,7 +270,7 @@
             this.repeatIntervalBox.CustomButton.Visible = false;
             this.repeatIntervalBox.Lines = new string[] {
         "metroTextBox4"};
-            this.repeatIntervalBox.Location = new System.Drawing.Point(109, 142);
+            this.repeatIntervalBox.Location = new System.Drawing.Point(103, 138);
             this.repeatIntervalBox.MaxLength = 32767;
             this.repeatIntervalBox.Name = "repeatIntervalBox";
             this.repeatIntervalBox.PasswordChar = '\0';
@@ -276,7 +291,7 @@
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(9, 142);
+            this.metroLabel5.Location = new System.Drawing.Point(3, 138);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(97, 19);
             this.metroLabel5.Style = MetroFramework.MetroColorStyle.Purple;
@@ -300,7 +315,7 @@
             this.cubeRightBox.CustomButton.Visible = false;
             this.cubeRightBox.Lines = new string[] {
         "metroTextBox5"};
-            this.cubeRightBox.Location = new System.Drawing.Point(107, 151);
+            this.cubeRightBox.Location = new System.Drawing.Point(95, 135);
             this.cubeRightBox.MaxLength = 32767;
             this.cubeRightBox.Name = "cubeRightBox";
             this.cubeRightBox.PasswordChar = '\0';
@@ -322,7 +337,7 @@
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(15, 151);
+            this.metroLabel6.Location = new System.Drawing.Point(3, 135);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(39, 19);
             this.metroLabel6.Style = MetroFramework.MetroColorStyle.Purple;
@@ -346,7 +361,7 @@
             this.cubeLeftBox.CustomButton.Visible = false;
             this.cubeLeftBox.Lines = new string[] {
         "metroTextBox6"};
-            this.cubeLeftBox.Location = new System.Drawing.Point(107, 113);
+            this.cubeLeftBox.Location = new System.Drawing.Point(95, 97);
             this.cubeLeftBox.MaxLength = 32767;
             this.cubeLeftBox.Name = "cubeLeftBox";
             this.cubeLeftBox.PasswordChar = '\0';
@@ -368,7 +383,7 @@
             // metroLabel7
             // 
             this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(15, 113);
+            this.metroLabel7.Location = new System.Drawing.Point(3, 97);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(30, 19);
             this.metroLabel7.Style = MetroFramework.MetroColorStyle.Purple;
@@ -392,7 +407,7 @@
             this.cubeDownBox.CustomButton.Visible = false;
             this.cubeDownBox.Lines = new string[] {
         "metroTextBox7"};
-            this.cubeDownBox.Location = new System.Drawing.Point(107, 72);
+            this.cubeDownBox.Location = new System.Drawing.Point(95, 56);
             this.cubeDownBox.MaxLength = 32767;
             this.cubeDownBox.Name = "cubeDownBox";
             this.cubeDownBox.PasswordChar = '\0';
@@ -414,7 +429,7 @@
             // metroLabel8
             // 
             this.metroLabel8.AutoSize = true;
-            this.metroLabel8.Location = new System.Drawing.Point(15, 72);
+            this.metroLabel8.Location = new System.Drawing.Point(3, 56);
             this.metroLabel8.Name = "metroLabel8";
             this.metroLabel8.Size = new System.Drawing.Size(42, 19);
             this.metroLabel8.Style = MetroFramework.MetroColorStyle.Purple;
@@ -438,7 +453,7 @@
             this.cubeUpBox.CustomButton.Visible = false;
             this.cubeUpBox.Lines = new string[] {
         "metroTextBox8"};
-            this.cubeUpBox.Location = new System.Drawing.Point(107, 30);
+            this.cubeUpBox.Location = new System.Drawing.Point(95, 14);
             this.cubeUpBox.MaxLength = 32767;
             this.cubeUpBox.Name = "cubeUpBox";
             this.cubeUpBox.PasswordChar = '\0';
@@ -460,7 +475,7 @@
             // metroLabel9
             // 
             this.metroLabel9.AutoSize = true;
-            this.metroLabel9.Location = new System.Drawing.Point(15, 30);
+            this.metroLabel9.Location = new System.Drawing.Point(3, 14);
             this.metroLabel9.Name = "metroLabel9";
             this.metroLabel9.Size = new System.Drawing.Size(26, 19);
             this.metroLabel9.Style = MetroFramework.MetroColorStyle.Purple;
@@ -484,7 +499,7 @@
             this.cubeActionRightBox.CustomButton.Visible = false;
             this.cubeActionRightBox.Lines = new string[] {
         "metroTextBox9"};
-            this.cubeActionRightBox.Location = new System.Drawing.Point(107, 231);
+            this.cubeActionRightBox.Location = new System.Drawing.Point(95, 215);
             this.cubeActionRightBox.MaxLength = 32767;
             this.cubeActionRightBox.Name = "cubeActionRightBox";
             this.cubeActionRightBox.PasswordChar = '\0';
@@ -506,7 +521,7 @@
             // metroLabel10
             // 
             this.metroLabel10.AutoSize = true;
-            this.metroLabel10.Location = new System.Drawing.Point(15, 231);
+            this.metroLabel10.Location = new System.Drawing.Point(3, 215);
             this.metroLabel10.Name = "metroLabel10";
             this.metroLabel10.Size = new System.Drawing.Size(70, 19);
             this.metroLabel10.Style = MetroFramework.MetroColorStyle.Purple;
@@ -530,7 +545,7 @@
             this.cubeActionLeftBox.CustomButton.Visible = false;
             this.cubeActionLeftBox.Lines = new string[] {
         "metroTextBox10"};
-            this.cubeActionLeftBox.Location = new System.Drawing.Point(107, 193);
+            this.cubeActionLeftBox.Location = new System.Drawing.Point(95, 177);
             this.cubeActionLeftBox.MaxLength = 32767;
             this.cubeActionLeftBox.Name = "cubeActionLeftBox";
             this.cubeActionLeftBox.PasswordChar = '\0';
@@ -552,7 +567,7 @@
             // metroLabel11
             // 
             this.metroLabel11.AutoSize = true;
-            this.metroLabel11.Location = new System.Drawing.Point(15, 193);
+            this.metroLabel11.Location = new System.Drawing.Point(3, 177);
             this.metroLabel11.Name = "metroLabel11";
             this.metroLabel11.Size = new System.Drawing.Size(61, 19);
             this.metroLabel11.Style = MetroFramework.MetroColorStyle.Purple;
@@ -576,7 +591,7 @@
             this.cubeActionWheelDownBox.CustomButton.Visible = false;
             this.cubeActionWheelDownBox.Lines = new string[] {
         "metroTextBox11"};
-            this.cubeActionWheelDownBox.Location = new System.Drawing.Point(107, 351);
+            this.cubeActionWheelDownBox.Location = new System.Drawing.Point(95, 335);
             this.cubeActionWheelDownBox.MaxLength = 32767;
             this.cubeActionWheelDownBox.Name = "cubeActionWheelDownBox";
             this.cubeActionWheelDownBox.PasswordChar = '\0';
@@ -598,7 +613,7 @@
             // metroLabel12
             // 
             this.metroLabel12.AutoSize = true;
-            this.metroLabel12.Location = new System.Drawing.Point(15, 351);
+            this.metroLabel12.Location = new System.Drawing.Point(3, 335);
             this.metroLabel12.Name = "metroLabel12";
             this.metroLabel12.Size = new System.Drawing.Size(83, 19);
             this.metroLabel12.Style = MetroFramework.MetroColorStyle.Purple;
@@ -622,7 +637,7 @@
             this.cubeActionWheelUpBox.CustomButton.Visible = false;
             this.cubeActionWheelUpBox.Lines = new string[] {
         "metroTextBox12"};
-            this.cubeActionWheelUpBox.Location = new System.Drawing.Point(107, 313);
+            this.cubeActionWheelUpBox.Location = new System.Drawing.Point(95, 297);
             this.cubeActionWheelUpBox.MaxLength = 32767;
             this.cubeActionWheelUpBox.Name = "cubeActionWheelUpBox";
             this.cubeActionWheelUpBox.PasswordChar = '\0';
@@ -644,7 +659,7 @@
             // metroLabel13
             // 
             this.metroLabel13.AutoSize = true;
-            this.metroLabel13.Location = new System.Drawing.Point(15, 313);
+            this.metroLabel13.Location = new System.Drawing.Point(3, 297);
             this.metroLabel13.Name = "metroLabel13";
             this.metroLabel13.Size = new System.Drawing.Size(67, 19);
             this.metroLabel13.Style = MetroFramework.MetroColorStyle.Purple;
@@ -668,7 +683,7 @@
             this.cubeActionWheelBox.CustomButton.Visible = false;
             this.cubeActionWheelBox.Lines = new string[] {
         "metroTextBox13"};
-            this.cubeActionWheelBox.Location = new System.Drawing.Point(107, 271);
+            this.cubeActionWheelBox.Location = new System.Drawing.Point(95, 255);
             this.cubeActionWheelBox.MaxLength = 32767;
             this.cubeActionWheelBox.Name = "cubeActionWheelBox";
             this.cubeActionWheelBox.PasswordChar = '\0';
@@ -690,7 +705,7 @@
             // metroLabel14
             // 
             this.metroLabel14.AutoSize = true;
-            this.metroLabel14.Location = new System.Drawing.Point(15, 271);
+            this.metroLabel14.Location = new System.Drawing.Point(3, 255);
             this.metroLabel14.Name = "metroLabel14";
             this.metroLabel14.Size = new System.Drawing.Size(77, 19);
             this.metroLabel14.Style = MetroFramework.MetroColorStyle.Purple;
@@ -698,59 +713,11 @@
             this.metroLabel14.Text = "Wheel Click";
             this.metroLabel14.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.cubeUpBox);
-            this.groupBox1.Controls.Add(this.cubeActionWheelDownBox);
-            this.groupBox1.Controls.Add(this.metroLabel9);
-            this.groupBox1.Controls.Add(this.metroLabel12);
-            this.groupBox1.Controls.Add(this.metroLabel8);
-            this.groupBox1.Controls.Add(this.cubeActionWheelUpBox);
-            this.groupBox1.Controls.Add(this.cubeDownBox);
-            this.groupBox1.Controls.Add(this.metroLabel13);
-            this.groupBox1.Controls.Add(this.metroLabel7);
-            this.groupBox1.Controls.Add(this.cubeActionWheelBox);
-            this.groupBox1.Controls.Add(this.cubeLeftBox);
-            this.groupBox1.Controls.Add(this.metroLabel14);
-            this.groupBox1.Controls.Add(this.metroLabel6);
-            this.groupBox1.Controls.Add(this.cubeActionRightBox);
-            this.groupBox1.Controls.Add(this.cubeRightBox);
-            this.groupBox1.Controls.Add(this.metroLabel10);
-            this.groupBox1.Controls.Add(this.metroLabel11);
-            this.groupBox1.Controls.Add(this.cubeActionLeftBox);
-            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.groupBox1.Location = new System.Drawing.Point(202, 33);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(190, 393);
-            this.groupBox1.TabIndex = 30;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Cube Actions";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.holdDelayBox);
-            this.groupBox2.Controls.Add(this.metroLabel2);
-            this.groupBox2.Controls.Add(this.repeatIntervalBox);
-            this.groupBox2.Controls.Add(this.metroLabel3);
-            this.groupBox2.Controls.Add(this.metroLabel5);
-            this.groupBox2.Controls.Add(this.pressDelayBox);
-            this.groupBox2.Controls.Add(this.actionDelayBox);
-            this.groupBox2.Controls.Add(this.metroLabel4);
-            this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.groupBox2.Location = new System.Drawing.Point(7, 33);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(190, 174);
-            this.groupBox2.TabIndex = 31;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Delays";
-            // 
             // saveButton
             // 
             this.saveButton.DisplayFocus = true;
             this.saveButton.Highlight = true;
-            this.saveButton.Location = new System.Drawing.Point(202, 471);
+            this.saveButton.Location = new System.Drawing.Point(208, 453);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 23);
             this.saveButton.Style = MetroFramework.MetroColorStyle.Purple;
@@ -760,45 +727,11 @@
             this.saveButton.UseSelectable = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
-            // cancelButton
-            // 
-            this.cancelButton.DisplayFocus = true;
-            this.cancelButton.Location = new System.Drawing.Point(315, 471);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(75, 23);
-            this.cancelButton.Style = MetroFramework.MetroColorStyle.Purple;
-            this.cancelButton.TabIndex = 33;
-            this.cancelButton.Text = "Cancel";
-            this.cancelButton.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.cancelButton.UseSelectable = true;
-            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.actionModeWheelUpBox);
-            this.groupBox3.Controls.Add(this.actionModeWheelDownBox);
-            this.groupBox3.Controls.Add(this.actionModeWheelBox);
-            this.groupBox3.Controls.Add(this.actionModeRightBox);
-            this.groupBox3.Controls.Add(this.actionModeLeftBox);
-            this.groupBox3.Controls.Add(this.metroLabel15);
-            this.groupBox3.Controls.Add(this.metroLabel16);
-            this.groupBox3.Controls.Add(this.metroLabel17);
-            this.groupBox3.Controls.Add(this.metroLabel18);
-            this.groupBox3.Controls.Add(this.metroLabel19);
-            this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.groupBox3.Location = new System.Drawing.Point(7, 213);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(190, 213);
-            this.groupBox3.TabIndex = 34;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Button Mode";
-            // 
             // actionModeWheelUpBox
             // 
             this.actionModeWheelUpBox.FormattingEnabled = true;
             this.actionModeWheelUpBox.ItemHeight = 23;
-            this.actionModeWheelUpBox.Location = new System.Drawing.Point(109, 176);
+            this.actionModeWheelUpBox.Location = new System.Drawing.Point(103, 165);
             this.actionModeWheelUpBox.Name = "actionModeWheelUpBox";
             this.actionModeWheelUpBox.Size = new System.Drawing.Size(76, 29);
             this.actionModeWheelUpBox.Style = MetroFramework.MetroColorStyle.Purple;
@@ -810,7 +743,7 @@
             // 
             this.actionModeWheelDownBox.FormattingEnabled = true;
             this.actionModeWheelDownBox.ItemHeight = 23;
-            this.actionModeWheelDownBox.Location = new System.Drawing.Point(109, 138);
+            this.actionModeWheelDownBox.Location = new System.Drawing.Point(103, 127);
             this.actionModeWheelDownBox.Name = "actionModeWheelDownBox";
             this.actionModeWheelDownBox.Size = new System.Drawing.Size(76, 29);
             this.actionModeWheelDownBox.Style = MetroFramework.MetroColorStyle.Purple;
@@ -822,7 +755,7 @@
             // 
             this.actionModeWheelBox.FormattingEnabled = true;
             this.actionModeWheelBox.ItemHeight = 23;
-            this.actionModeWheelBox.Location = new System.Drawing.Point(109, 96);
+            this.actionModeWheelBox.Location = new System.Drawing.Point(103, 85);
             this.actionModeWheelBox.Name = "actionModeWheelBox";
             this.actionModeWheelBox.Size = new System.Drawing.Size(76, 29);
             this.actionModeWheelBox.Style = MetroFramework.MetroColorStyle.Purple;
@@ -834,7 +767,7 @@
             // 
             this.actionModeRightBox.FormattingEnabled = true;
             this.actionModeRightBox.ItemHeight = 23;
-            this.actionModeRightBox.Location = new System.Drawing.Point(109, 57);
+            this.actionModeRightBox.Location = new System.Drawing.Point(103, 46);
             this.actionModeRightBox.Name = "actionModeRightBox";
             this.actionModeRightBox.Size = new System.Drawing.Size(76, 29);
             this.actionModeRightBox.Style = MetroFramework.MetroColorStyle.Purple;
@@ -846,7 +779,7 @@
             // 
             this.actionModeLeftBox.FormattingEnabled = true;
             this.actionModeLeftBox.ItemHeight = 23;
-            this.actionModeLeftBox.Location = new System.Drawing.Point(109, 20);
+            this.actionModeLeftBox.Location = new System.Drawing.Point(103, 9);
             this.actionModeLeftBox.Name = "actionModeLeftBox";
             this.actionModeLeftBox.Size = new System.Drawing.Size(76, 29);
             this.actionModeLeftBox.Style = MetroFramework.MetroColorStyle.Purple;
@@ -857,7 +790,7 @@
             // metroLabel15
             // 
             this.metroLabel15.AutoSize = true;
-            this.metroLabel15.Location = new System.Drawing.Point(9, 183);
+            this.metroLabel15.Location = new System.Drawing.Point(3, 172);
             this.metroLabel15.Name = "metroLabel15";
             this.metroLabel15.Size = new System.Drawing.Size(83, 19);
             this.metroLabel15.Style = MetroFramework.MetroColorStyle.Purple;
@@ -868,7 +801,7 @@
             // metroLabel16
             // 
             this.metroLabel16.AutoSize = true;
-            this.metroLabel16.Location = new System.Drawing.Point(9, 144);
+            this.metroLabel16.Location = new System.Drawing.Point(3, 133);
             this.metroLabel16.Name = "metroLabel16";
             this.metroLabel16.Size = new System.Drawing.Size(67, 19);
             this.metroLabel16.Style = MetroFramework.MetroColorStyle.Purple;
@@ -879,7 +812,7 @@
             // metroLabel17
             // 
             this.metroLabel17.AutoSize = true;
-            this.metroLabel17.Location = new System.Drawing.Point(9, 102);
+            this.metroLabel17.Location = new System.Drawing.Point(3, 91);
             this.metroLabel17.Name = "metroLabel17";
             this.metroLabel17.Size = new System.Drawing.Size(77, 19);
             this.metroLabel17.Style = MetroFramework.MetroColorStyle.Purple;
@@ -890,7 +823,7 @@
             // metroLabel18
             // 
             this.metroLabel18.AutoSize = true;
-            this.metroLabel18.Location = new System.Drawing.Point(9, 62);
+            this.metroLabel18.Location = new System.Drawing.Point(3, 51);
             this.metroLabel18.Name = "metroLabel18";
             this.metroLabel18.Size = new System.Drawing.Size(70, 19);
             this.metroLabel18.Style = MetroFramework.MetroColorStyle.Purple;
@@ -901,7 +834,7 @@
             // metroLabel19
             // 
             this.metroLabel19.AutoSize = true;
-            this.metroLabel19.Location = new System.Drawing.Point(9, 24);
+            this.metroLabel19.Location = new System.Drawing.Point(3, 13);
             this.metroLabel19.Name = "metroLabel19";
             this.metroLabel19.Size = new System.Drawing.Size(61, 19);
             this.metroLabel19.Style = MetroFramework.MetroColorStyle.Purple;
@@ -912,7 +845,7 @@
             // metroLabel20
             // 
             this.metroLabel20.AutoSize = true;
-            this.metroLabel20.Location = new System.Drawing.Point(202, 437);
+            this.metroLabel20.Location = new System.Drawing.Point(6, 58);
             this.metroLabel20.Name = "metroLabel20";
             this.metroLabel20.Size = new System.Drawing.Size(39, 19);
             this.metroLabel20.Style = MetroFramework.MetroColorStyle.Purple;
@@ -931,7 +864,7 @@
             0,
             0,
             65536});
-            this.scaleUpDown.Location = new System.Drawing.Point(272, 430);
+            this.scaleUpDown.Location = new System.Drawing.Point(60, 51);
             this.scaleUpDown.Maximum = new decimal(new int[] {
             35,
             0,
@@ -943,7 +876,7 @@
             0,
             65536});
             this.scaleUpDown.Name = "scaleUpDown";
-            this.scaleUpDown.Size = new System.Drawing.Size(120, 31);
+            this.scaleUpDown.Size = new System.Drawing.Size(136, 31);
             this.scaleUpDown.TabIndex = 36;
             this.scaleUpDown.Value = new decimal(new int[] {
             5,
@@ -952,23 +885,201 @@
             65536});
             this.scaleUpDown.ValueChanged += new System.EventHandler(this.scaleUpDown_ValueChanged);
             // 
+            // metroTabControl1
+            // 
+            this.metroTabControl1.Controls.Add(this.tabPage1);
+            this.metroTabControl1.Controls.Add(this.tabPage2);
+            this.metroTabControl1.Controls.Add(this.tabPage3);
+            this.metroTabControl1.Controls.Add(this.tabPage4);
+            this.metroTabControl1.Location = new System.Drawing.Point(7, 33);
+            this.metroTabControl1.Name = "metroTabControl1";
+            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.Size = new System.Drawing.Size(399, 414);
+            this.metroTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
+            this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Purple;
+            this.metroTabControl1.TabIndex = 37;
+            this.metroTabControl1.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroTabControl1.UseSelectable = true;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.tabPage1.Controls.Add(this.panel1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 38);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(391, 372);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Function";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.metroLabel21);
+            this.panel1.Controls.Add(this.repeatToggle);
+            this.panel1.Controls.Add(this.repeatDelayBox);
+            this.panel1.Controls.Add(this.metroLabel2);
+            this.panel1.Controls.Add(this.metroLabel4);
+            this.panel1.Controls.Add(this.repeatIntervalBox);
+            this.panel1.Controls.Add(this.actionDelayBox);
+            this.panel1.Controls.Add(this.metroLabel3);
+            this.panel1.Controls.Add(this.pressDelayBox);
+            this.panel1.Controls.Add(this.metroLabel5);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(391, 372);
+            this.panel1.TabIndex = 0;
+            // 
+            // metroLabel21
+            // 
+            this.metroLabel21.AutoSize = true;
+            this.metroLabel21.Location = new System.Drawing.Point(184, 17);
+            this.metroLabel21.Name = "metroLabel21";
+            this.metroLabel21.Size = new System.Drawing.Size(110, 19);
+            this.metroLabel21.Style = MetroFramework.MetroColorStyle.Purple;
+            this.metroLabel21.TabIndex = 13;
+            this.metroLabel21.Text = "Allow Key Repeat";
+            this.metroLabel21.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
+            // repeatToggle
+            // 
+            this.repeatToggle.AutoSize = true;
+            this.repeatToggle.Location = new System.Drawing.Point(300, 15);
+            this.repeatToggle.Name = "repeatToggle";
+            this.repeatToggle.Size = new System.Drawing.Size(80, 25);
+            this.repeatToggle.Style = MetroFramework.MetroColorStyle.Purple;
+            this.repeatToggle.TabIndex = 12;
+            this.repeatToggle.Text = "Off";
+            this.repeatToggle.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.repeatToggle.UseSelectable = true;
+            this.repeatToggle.CheckedChanged += new System.EventHandler(this.repeatToggle_CheckedChanged);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.tabPage2.Controls.Add(this.panel2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 38);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Size = new System.Drawing.Size(391, 419);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Mouse Settings";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.actionModeWheelUpBox);
+            this.panel2.Controls.Add(this.metroLabel19);
+            this.panel2.Controls.Add(this.actionModeWheelDownBox);
+            this.panel2.Controls.Add(this.metroLabel18);
+            this.panel2.Controls.Add(this.actionModeWheelBox);
+            this.panel2.Controls.Add(this.metroLabel17);
+            this.panel2.Controls.Add(this.actionModeRightBox);
+            this.panel2.Controls.Add(this.metroLabel16);
+            this.panel2.Controls.Add(this.actionModeLeftBox);
+            this.panel2.Controls.Add(this.metroLabel15);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(391, 419);
+            this.panel2.TabIndex = 0;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.tabPage3.Controls.Add(this.panel3);
+            this.tabPage3.Location = new System.Drawing.Point(4, 38);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(391, 372);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Game Cube";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.cubeUpBox);
+            this.panel3.Controls.Add(this.metroLabel9);
+            this.panel3.Controls.Add(this.cubeActionWheelDownBox);
+            this.panel3.Controls.Add(this.cubeActionLeftBox);
+            this.panel3.Controls.Add(this.metroLabel11);
+            this.panel3.Controls.Add(this.metroLabel12);
+            this.panel3.Controls.Add(this.metroLabel10);
+            this.panel3.Controls.Add(this.metroLabel8);
+            this.panel3.Controls.Add(this.cubeRightBox);
+            this.panel3.Controls.Add(this.cubeActionWheelUpBox);
+            this.panel3.Controls.Add(this.cubeActionRightBox);
+            this.panel3.Controls.Add(this.cubeDownBox);
+            this.panel3.Controls.Add(this.metroLabel6);
+            this.panel3.Controls.Add(this.metroLabel13);
+            this.panel3.Controls.Add(this.metroLabel14);
+            this.panel3.Controls.Add(this.metroLabel7);
+            this.panel3.Controls.Add(this.cubeLeftBox);
+            this.panel3.Controls.Add(this.cubeActionWheelBox);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(391, 372);
+            this.panel3.TabIndex = 0;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.tabPage4.Controls.Add(this.panel4);
+            this.tabPage4.Location = new System.Drawing.Point(4, 38);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(391, 419);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Appearance";
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.scaleTrackbar);
+            this.panel4.Controls.Add(this.layouNameBox);
+            this.panel4.Controls.Add(this.scaleUpDown);
+            this.panel4.Controls.Add(this.metroLabel1);
+            this.panel4.Controls.Add(this.metroLabel20);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(391, 419);
+            this.panel4.TabIndex = 0;
+            // 
+            // scaleTrackbar
+            // 
+            this.scaleTrackbar.BackColor = System.Drawing.Color.Transparent;
+            this.scaleTrackbar.LargeChange = 10;
+            this.scaleTrackbar.Location = new System.Drawing.Point(7, 88);
+            this.scaleTrackbar.Maximum = 350;
+            this.scaleTrackbar.Minimum = 100;
+            this.scaleTrackbar.Name = "scaleTrackbar";
+            this.scaleTrackbar.Size = new System.Drawing.Size(189, 23);
+            this.scaleTrackbar.Style = MetroFramework.MetroColorStyle.Purple;
+            this.scaleTrackbar.TabIndex = 37;
+            this.scaleTrackbar.Text = "metroTrackBar1";
+            this.scaleTrackbar.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.scaleTrackbar.Value = 100;
+            this.scaleTrackbar.ValueChanged += new System.EventHandler(this.scaleTrackbar_ValueChanged);
+            // 
+            // cancelButton
+            // 
+            this.cancelButton.DisplayFocus = true;
+            this.cancelButton.Location = new System.Drawing.Point(331, 453);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.Style = MetroFramework.MetroColorStyle.Purple;
+            this.cancelButton.TabIndex = 33;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.cancelButton.UseSelectable = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            // 
             // SettinsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(505, 538);
+            this.ClientSize = new System.Drawing.Size(433, 515);
             this.ControlBox = false;
-            this.Controls.Add(this.scaleUpDown);
-            this.Controls.Add(this.metroLabel20);
-            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.metroTabControl1);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.saveButton);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.metroLabel1);
-            this.Controls.Add(this.layouNameBox);
             this.DisplayHeader = false;
             this.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -981,15 +1092,21 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Style = MetroFramework.MetroColorStyle.Purple;
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scaleUpDown)).EndInit();
+            this.metroTabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -997,7 +1114,7 @@
         private MetroFramework.Controls.MetroComboBox layouNameBox;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroTextBox holdDelayBox;
+        private MetroFramework.Controls.MetroTextBox repeatDelayBox;
         private MetroFramework.Controls.MetroTextBox pressDelayBox;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroTextBox actionDelayBox;
@@ -1022,11 +1139,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel13;
         private MetroFramework.Controls.MetroTextBox cubeActionWheelBox;
         private MetroFramework.Controls.MetroLabel metroLabel14;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
         private MetroFramework.Controls.MetroButton saveButton;
-        private MetroFramework.Controls.MetroButton cancelButton;
-        private System.Windows.Forms.GroupBox groupBox3;
         private MetroFramework.Controls.MetroLabel metroLabel15;
         private MetroFramework.Controls.MetroLabel metroLabel16;
         private MetroFramework.Controls.MetroLabel metroLabel17;
@@ -1039,5 +1152,18 @@
         private MetroFramework.Controls.MetroComboBox actionModeRightBox;
         private MetroFramework.Controls.MetroLabel metroLabel20;
         private System.Windows.Forms.NumericUpDown scaleUpDown;
+        private MetroFramework.Controls.MetroTabControl metroTabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private MetroFramework.Controls.MetroButton cancelButton;
+        private MetroFramework.Controls.MetroTrackBar scaleTrackbar;
+        private MetroFramework.Controls.MetroLabel metroLabel21;
+        private MetroFramework.Controls.MetroToggle repeatToggle;
     }
 }

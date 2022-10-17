@@ -32,7 +32,8 @@ namespace FullScreenKeyboardReborn
         private void ReloadSettings()
         {
             var settings = Program.KeyboardSettings;
-            holdDelayBox.Text = settings.RepeatDelay.ToString();
+            repeatToggle.Checked = settings.AllowRepeating;
+            repeatDelayBox.Text = settings.RepeatDelay.ToString();
             pressDelayBox.Text = settings.PressDelay.ToString();
             actionDelayBox.Text = settings.ActionDelay.ToString();
             repeatIntervalBox.Text = settings.RepeatInterval.ToString();
@@ -52,6 +53,7 @@ namespace FullScreenKeyboardReborn
             cubeActionWheelDownBox.Text = settings.CubeActionWheelDown.ToString();
             layouNameBox.SelectedItem = settings.LayoutName.ToString();
             scaleUpDown.Value = settings.ScaleFactor;
+            scaleTrackbar.Value = (int)(settings.ScaleFactor * 100);
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -59,7 +61,8 @@ namespace FullScreenKeyboardReborn
             var settings = Program.KeyboardSettings;
             try
             {
-                settings.RepeatDelay = int.Parse(holdDelayBox.Text);
+                settings.AllowRepeating = repeatToggle.Checked;
+                settings.RepeatDelay = int.Parse(repeatDelayBox.Text);
                 settings.PressDelay = int.Parse(pressDelayBox.Text);
                 settings.ActionDelay = int.Parse(actionDelayBox.Text);
                 settings.RepeatInterval = int.Parse(repeatIntervalBox.Text);
@@ -104,18 +107,32 @@ namespace FullScreenKeyboardReborn
 
         private void layouNameBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ReloadLayout();
+        }
+
+        private void scaleUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            scaleTrackbar.Value = (int)(scaleUpDown.Value * 100);
+            ReloadLayout();
+        }
+
+        private void scaleTrackbar_ValueChanged(object sender, EventArgs e)
+        {
+            scaleUpDown.Value = (decimal)scaleTrackbar.Value / 100;
+            ReloadLayout();
+        }
+
+        private void ReloadLayout()
+        {
             if (mainBoard != null)
             {
                 mainBoard.LoadLayout(layouNameBox.Text, scaleUpDown.Value);
             }
         }
 
-        private void scaleUpDown_ValueChanged(object sender, EventArgs e)
+        private void repeatToggle_CheckedChanged(object sender, EventArgs e)
         {
-            if (mainBoard != null)
-            {
-                mainBoard.LoadLayout(layouNameBox.Text, scaleUpDown.Value);
-            }
+            repeatDelayBox.Enabled = repeatToggle.Checked;
         }
     }
 }

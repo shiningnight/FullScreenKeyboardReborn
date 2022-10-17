@@ -97,25 +97,25 @@ namespace FullScreenKeyboardReborn
             if (nCode >= 0 && KeyEvent != null)
             {
                 KeyboardMessage keyboardMessage = (KeyboardMessage)Marshal.PtrToStructure(lParam, typeof(KeyboardMessage));
-
+                Keys vkCode = (Keys)keyboardMessage.vkCode;
                 if (wParam == WM_KEYDOWN || wParam == WM_SYSKEYDOWN)
                 {
-                    KeyEvent((Keys)keyboardMessage.vkCode, EventType.Down);
+                    KeyEvent(vkCode, EventType.Down);
                 }
 
                 if (wParam == WM_KEYUP || wParam == WM_SYSKEYUP)
                 {
-                    KeyEvent((Keys)keyboardMessage.vkCode, EventType.Up);
+                    KeyEvent(vkCode, EventType.Up);
                 }
 
-                if (((Keys)keyboardMessage.vkCode == Keys.CapsLock
-                    || (Keys)keyboardMessage.vkCode == Keys.NumLock
-                    || (Keys)keyboardMessage.vkCode == Keys.Scroll)
+                if ((vkCode == Keys.CapsLock
+                    || vkCode == Keys.NumLock
+                    || vkCode == Keys.Scroll)
                     //&& (wParam == WM_KEYUP || wParam == WM_SYSKEYUP)
                     && LockEvent != null)
                 {
                     UpdateLockStatus();
-                    LockEvent((Keys)keyboardMessage.vkCode, (((ushort)GetKeyState(keyboardMessage.vkCode)) & 1) != 0);
+                    LockEvent(vkCode, (((ushort)GetKeyState(keyboardMessage.vkCode)) & 1) != 0);
                 }
 
             }

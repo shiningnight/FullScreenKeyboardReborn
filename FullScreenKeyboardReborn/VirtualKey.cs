@@ -959,10 +959,11 @@ namespace FullScreenKeyboardReborn
                     if (!AutoHoldKeys.Contains(vkCode)
                     && VkCodes.Count == 1 && AutoHoldKeys.Contains(VkCodes[0])
                     && eventType == Keyboard.EventType.Up && vkCode != VkCodes[0]
-                    && !Repeating && !HoldLocked)
+                    && !Repeating && !HoldLocked && Pressed)
                     {
                         Up();
                         Holding = false;
+                        Pressed = false;
                     }
 
                     if ((ShiftKeyNames.ContainsKey(VkCodes[0]) || (VkCodes[0] >= Keys.A && VkCodes[0] <= Keys.Z)) && VkCodes.Count == 1
