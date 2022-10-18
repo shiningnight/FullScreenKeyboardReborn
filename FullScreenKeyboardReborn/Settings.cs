@@ -29,9 +29,12 @@ namespace FullScreenKeyboardReborn
         public Keys CubeActionWheel = Keys.C;
         public Keys CubeActionWheelDown = Keys.Q;
         public Keys CubeActionWheelUp = Keys.E;
-        public Point CubeLastLocation = new Point(500, 500);
-        public Point MainLastLocation = new Point(500, 500);
+        public Point CubeLastLocation = new Point(300, 300);
+        public Point MainLastLocation = new Point(300, 300);
         public decimal ScaleFactor = 1.58M;
+        public Font MainFont = new Font("Arial", 9);
+
+        public static Settings Default = new Settings();
 
         public static Settings Load() {
             Settings settings = new Settings();

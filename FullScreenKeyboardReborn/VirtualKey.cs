@@ -125,7 +125,7 @@ namespace FullScreenKeyboardReborn
             ComponentInit();
         }
 
-        public VirtualKey(string keyLabel, List<Point> boundry, List<Keys> vkCodes, Dictionary<string, string> parameters)
+        public VirtualKey(string keyLabel, List<Point> boundry, List<Keys> vkCodes, Font mainFont, Dictionary<string, string> parameters)
         {
             EventsInit();
             ComponentInit();
@@ -222,6 +222,10 @@ namespace FullScreenKeyboardReborn
             if (KeyLabel.Length > 0 && KeyLabel[0] >= '\uf000')
             {
                 Font = NormalIconFont;
+            }
+            else
+            {
+                Font = mainFont;
             }
 
             if (vkCodes.Count == 1 && Program.VKeyboard.LockStatus.ContainsKey(vkCodes[0]))
@@ -1071,13 +1075,13 @@ namespace FullScreenKeyboardReborn
         private readonly Color HoveringBackColor = Color.DarkGray;
         private readonly Color RepeatingForeColor = MetroColors.Red;
         private readonly Color BorderColor = MetroColors.Blue;
-        private readonly Font NormalFont = new Font("monofur", 10, FontStyle.Regular);
+        //private readonly Font NormalFont = new Font("monofur", 10, FontStyle.Regular);
+        private readonly Font NormalFont = Program.KeyboardSettings.MainFont;
         private readonly Font NormalIconFont = new Font(Program.IconFontFamily, 10, FontStyle.Regular);
 
         private string NormalKeyLabel;
         private string ShiftKeyLabel;
 
-        private int repeatTriggerTick = Program.KeyboardSettings.RepeatDelay;
         private bool Holding = false;
         private bool HoldLocked = false;
         private bool Repeating = false;

@@ -21,7 +21,7 @@ namespace FullScreenKeyboardReborn
             InitializeComponent();
             settinsForm = new SettinsForm(this);
             Location = Program.KeyboardSettings.MainLastLocation;
-            LoadLayout(Program.KeyboardSettings.LayoutName, Program.KeyboardSettings.ScaleFactor);
+            LoadLayout(Program.KeyboardSettings.LayoutName, Program.KeyboardSettings.ScaleFactor, Program.KeyboardSettings.MainFont);
             StyleManager = Program.MStyleManager;
             // todo Next version: Another layout editor.Manually coding out UI is acceptable? Never!)
         }
@@ -132,7 +132,8 @@ namespace FullScreenKeyboardReborn
 
                 if (result == null)
                 {
-                    throw new NullReferenceException();
+                    Location = Settings.Default.MainLastLocation;
+                    result = Screen.GetWorkingArea(Location);
                 }
                 return (Rectangle)result;
             }
@@ -170,7 +171,7 @@ namespace FullScreenKeyboardReborn
             Environment.Exit(0);
         }
 
-        public void LoadLayout(string layoutName, decimal scaleFactor)
+        public void LoadLayout(string layoutName, decimal scaleFactor, Font mainFont)
         {
             using (var reader = new StreamReader($"Keyboards\\{layoutName}", Encoding.UTF8))
             {
@@ -206,7 +207,7 @@ namespace FullScreenKeyboardReborn
                             //Console.WriteLine(p);
                             if (p[0] == '-')
                             {
-                                Controls.Add(new VirtualKey(parameters["label"], boundry, vkCodes, parameters));
+                                Controls.Add(new VirtualKey(parameters["label"], boundry, vkCodes, mainFont, parameters));
                                 boundry = new List<Point>();
                             }
                             else if (p[0] > '9' || p[0] < '0')
@@ -216,7 +217,7 @@ namespace FullScreenKeyboardReborn
                                 if (!keyFinished)
                                 {
                                     keyFinished = true;
-                                    Controls.Add(new VirtualKey(parameters["label"], boundry, vkCodes, parameters));
+                                    Controls.Add(new VirtualKey(parameters["label"], boundry, vkCodes, mainFont, parameters));
                                 }
                             }
                             else
@@ -225,7 +226,7 @@ namespace FullScreenKeyboardReborn
                                 boundry.Add(new Point((int)(int.Parse(pointParts[0]) * scaleFactor), (int)(int.Parse(pointParts[1]) * scaleFactor)));
                                 if (p.Contains(props.Last()))
                                 {
-                                    Controls.Add(new VirtualKey(parameters["label"], boundry, vkCodes, parameters));
+                                    Controls.Add(new VirtualKey(parameters["label"], boundry, vkCodes, mainFont, parameters));
                                 }
 
                             }

@@ -76,7 +76,8 @@ namespace FullScreenKeyboardReborn
 
                 if (result == null)
                 {
-                    throw new NullReferenceException();
+                    Location = Settings.Default.CubeLastLocation;
+                    result = Screen.GetWorkingArea(Location);
                 }
                 return (Rectangle) result;
             }

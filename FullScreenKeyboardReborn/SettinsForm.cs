@@ -2,12 +2,13 @@ using System;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime;
 using System.Windows.Forms;
+using FullScreenKeyboardReborn.Properties;
 using MetroFramework;
 using MetroFramework.Controls;
 using MetroFramework.Forms;
-
-
+using Newtonsoft.Json;
 
 namespace FullScreenKeyboardReborn
 {
@@ -18,12 +19,13 @@ namespace FullScreenKeyboardReborn
         public SettinsForm(MainBoard mainBoard)
         {
             InitializeComponent();
-            layouNameBox.Items.AddRange(new DirectoryInfo("Keyboards").GetFiles("*.txt").ToList().Select(x => x.Name).ToArray());
+            //ReloadLayoutList();
             actionModeLeftBox.DataSource = Enum.GetNames(typeof(VirtualKey.ActionMode));
             actionModeRightBox.DataSource = Enum.GetNames(typeof(VirtualKey.ActionMode));
             actionModeWheelBox.DataSource = Enum.GetNames(typeof(VirtualKey.ActionMode));
             actionModeWheelDownBox.DataSource = Enum.GetNames(typeof(VirtualKey.ActionMode));
             actionModeWheelUpBox.DataSource = Enum.GetNames(typeof(VirtualKey.ActionMode));
+
             ReloadSettings();
 
             this.mainBoard = mainBoard;
@@ -54,6 +56,8 @@ namespace FullScreenKeyboardReborn
             layouNameBox.SelectedItem = settings.LayoutName.ToString();
             scaleUpDown.Value = settings.ScaleFactor;
             scaleTrackbar.Value = (int)(settings.ScaleFactor * 100);
+            fontDialog.Font = settings.MainFont;
+            fontBox.Text = JsonConvert.SerializeObject(fontDialog.Font);
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -82,6 +86,7 @@ namespace FullScreenKeyboardReborn
                 settings.CubeActionWheelDown = (Keys)Enum.Parse(typeof(Keys),cubeActionWheelDownBox.Text);
                 settings.LayoutName = layouNameBox.Text;
                 settings.ScaleFactor = scaleUpDown.Value;
+                settings.MainFont = fontDialog.Font;
                 Settings.Save(settings);
                 Hide();
             }
@@ -95,7 +100,7 @@ namespace FullScreenKeyboardReborn
         private void cancelButton_Click(object sender, EventArgs e)
         {
             ReloadSettings();
-            mainBoard.LoadLayout(Program.KeyboardSettings.LayoutName, Program.KeyboardSettings.ScaleFactor);
+            mainBoard.LoadLayout(Program.KeyboardSettings.LayoutName, Program.KeyboardSettings.ScaleFactor, Program.KeyboardSettings.MainFont);
             Hide();
         }
 
@@ -126,13 +131,44 @@ namespace FullScreenKeyboardReborn
         {
             if (mainBoard != null)
             {
-                mainBoard.LoadLayout(layouNameBox.Text, scaleUpDown.Value);
+                mainBoard.LoadLayout(layouNameBox.Text, scaleUpDown.Value, fontDialog.Font);
             }
         }
 
         private void repeatToggle_CheckedChanged(object sender, EventArgs e)
         {
             repeatDelayBox.Enabled = repeatToggle.Checked;
+        }
+
+        private void fontBox_ButtonClick(object sender, EventArgs e)
+        {
+            var result = fontDialog.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                fontBox.Text = JsonConvert.SerializeObject(fontDialog.Font);
+                ReloadLayout();
+            }
+        }
+
+        private void SettinsForm_VisibleChanged(object sender, EventArgs e)
+        {
+            if (Visible)
+            {
+                ReloadLayoutList();
+            }
+        }
+
+        private void metroTile1_Click(object sender, EventArgs e)
+        {
+            ReloadLayoutList();
+        }
+
+        private void ReloadLayoutList()
+        {
+            layouNameBox.Items.Clear();
+            layouNameBox.Items.AddRange(new DirectoryInfo("Keyboards").GetFiles("*.txt").ToList().Select(x => x.Name).ToArray());
+            layouNameBox.SelectedItem = Program.KeyboardSettings.LayoutName.ToString();
+
         }
     }
 }

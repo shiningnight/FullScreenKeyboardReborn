@@ -175,7 +175,9 @@
     <EmbeddedResource Include="VirtualKey.resx">
       <DependentUpon>VirtualKey.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Resources\FontAwesome.otf" />
+    <None Include="Resources\FontAwesome.otf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\NotoEmoji.ttf" />
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
