@@ -13,7 +13,6 @@ using Timer = System.Timers.Timer;
 
 namespace FullScreenKeyboardReborn
 {
-    // todo Next version: Polygon Button feature(needs override onPaint for sure)
     // todo Next version: Image Button tag(key name) feature
     internal class VirtualKey : MetroButton
     {
