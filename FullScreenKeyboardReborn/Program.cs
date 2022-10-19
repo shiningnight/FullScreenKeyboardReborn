@@ -67,6 +67,7 @@ namespace FullScreenKeyboardReborn
         public static MetroStyleManager MStyleManager = new MetroStyleManager();
         public static Keyboard VKeyboard = new Keyboard();
         public static StreamWriter Logger = new StreamWriter("fskr.log", true);
+
         public delegate void KeyboardEventHandler(Keys vkCode, Keyboard.EventType eventType);
         public delegate void KeyboardLockEventHandler(Keys lockKey, bool isOn);
     }
