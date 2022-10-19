@@ -157,7 +157,7 @@ namespace FullScreenKeyboardReborn
         {
             if (!settinsForm.Visible)
             {
-                settinsForm.ShowDialog();
+                settinsForm.Show();
             }
         }
 
