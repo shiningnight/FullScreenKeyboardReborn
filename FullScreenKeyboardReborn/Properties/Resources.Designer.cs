@@ -63,19 +63,9 @@ namespace FullScreenKeyboardReborn.Properties {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] FontAwesome {
+        internal static byte[] fontawesomettf {
             get {
-                object obj = ResourceManager.GetObject("FontAwesome", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Byte[] 类型的本地化资源。
-        /// </summary>
-        internal static byte[] NotoEmoji {
-            get {
-                object obj = ResourceManager.GetObject("NotoEmoji", resourceCulture);
+                object obj = ResourceManager.GetObject("fontawesomettf", resourceCulture);
                 return ((byte[])(obj));
             }
         }
