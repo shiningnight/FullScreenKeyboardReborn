@@ -62,7 +62,7 @@ namespace FullScreenKeyboardReborn
         }
 
         public static VkmController Controller { get; private set; }
-        public static FontFamily IconFontFamily;
+        public static FontFamily IconFontFamily = new FontFamily("Arial");
         public static Settings KeyboardSettings = Settings.Load();
         public static MetroStyleManager MStyleManager = new MetroStyleManager();
         public static Keyboard VKeyboard = new Keyboard();
