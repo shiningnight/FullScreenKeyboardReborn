@@ -112,26 +112,26 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="hideButton.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="hideButton.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="hideButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>236, 187</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="hideButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 1</value>
   </data>
   <data name="hideButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>36, 36</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="hideButton.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
@@ -150,7 +150,7 @@
   <data name="&gt;&gt;hideButton.ZOrder" xml:space="preserve">
     <value>25</value>
   </data>
-  <metadata name="gameCube2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="gameCube2.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="gameCube2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -2097,7 +2097,7 @@
   <data name="&gt;&gt;gameCube2.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="virtualKey24.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="virtualKey24.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="virtualKey24.Location" type="System.Drawing.Point, System.Drawing">
@@ -2127,7 +2127,7 @@
   <data name="&gt;&gt;virtualKey24.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="virtualKey30.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="virtualKey30.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="virtualKey30.Location" type="System.Drawing.Point, System.Drawing">
@@ -2157,7 +2157,7 @@
   <data name="&gt;&gt;virtualKey30.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <metadata name="virtualKey29.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="virtualKey29.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="virtualKey29.Location" type="System.Drawing.Point, System.Drawing">
@@ -2187,7 +2187,7 @@
   <data name="&gt;&gt;virtualKey29.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <metadata name="virtualKey28.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="virtualKey28.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="virtualKey28.Location" type="System.Drawing.Point, System.Drawing">
@@ -2217,7 +2217,7 @@
   <data name="&gt;&gt;virtualKey28.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <metadata name="virtualKey27.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="virtualKey27.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="virtualKey27.Location" type="System.Drawing.Point, System.Drawing">
@@ -2247,7 +2247,7 @@
   <data name="&gt;&gt;virtualKey27.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <metadata name="virtualKey26.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="virtualKey26.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="virtualKey26.Location" type="System.Drawing.Point, System.Drawing">
@@ -2277,7 +2277,7 @@
   <data name="&gt;&gt;virtualKey26.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <metadata name="virtualKey25.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="virtualKey25.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="virtualKey25.Location" type="System.Drawing.Point, System.Drawing">
@@ -2304,7 +2304,7 @@
   <data name="&gt;&gt;virtualKey25.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <metadata name="virtualKey23.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="virtualKey23.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="virtualKey23.Location" type="System.Drawing.Point, System.Drawing">
@@ -2334,7 +2334,7 @@
   <data name="&gt;&gt;virtualKey23.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <metadata name="virtualKey22.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="virtualKey22.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="virtualKey22.Location" type="System.Drawing.Point, System.Drawing">
@@ -2364,7 +2364,7 @@
   <data name="&gt;&gt;virtualKey22.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <metadata name="virtualKey21.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="virtualKey21.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="virtualKey21.Location" type="System.Drawing.Point, System.Drawing">
@@ -2394,7 +2394,7 @@
   <data name="&gt;&gt;virtualKey21.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <metadata name="virtualKey20.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="virtualKey20.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="virtualKey20.Location" type="System.Drawing.Point, System.Drawing">
@@ -2424,7 +2424,7 @@
   <data name="&gt;&gt;virtualKey20.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
-  <metadata name="virtualKey19.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="virtualKey19.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="virtualKey19.Location" type="System.Drawing.Point, System.Drawing">
@@ -2454,7 +2454,7 @@
   <data name="&gt;&gt;virtualKey19.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
-  <metadata name="virtualKey18.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="virtualKey18.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="virtualKey18.Location" type="System.Drawing.Point, System.Drawing">
@@ -2484,7 +2484,7 @@
   <data name="&gt;&gt;virtualKey18.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
-  <metadata name="virtualKey17.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="virtualKey17.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="virtualKey17.Location" type="System.Drawing.Point, System.Drawing">
@@ -2514,7 +2514,7 @@
   <data name="&gt;&gt;virtualKey17.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
-  <metadata name="virtualKey16.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="virtualKey16.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="virtualKey16.Location" type="System.Drawing.Point, System.Drawing">
@@ -2544,7 +2544,7 @@
   <data name="&gt;&gt;virtualKey16.ZOrder" xml:space="preserve">
     <value>15</value>
   </data>
-  <metadata name="virtualKey15.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="virtualKey15.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="virtualKey15.Location" type="System.Drawing.Point, System.Drawing">
@@ -2574,7 +2574,7 @@
   <data name="&gt;&gt;virtualKey15.ZOrder" xml:space="preserve">
     <value>16</value>
   </data>
-  <metadata name="virtualKey14.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="virtualKey14.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="virtualKey14.Location" type="System.Drawing.Point, System.Drawing">
@@ -2604,7 +2604,7 @@
   <data name="&gt;&gt;virtualKey14.ZOrder" xml:space="preserve">
     <value>17</value>
   </data>
-  <metadata name="virtualKey13.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="virtualKey13.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="virtualKey13.Location" type="System.Drawing.Point, System.Drawing">
@@ -2634,7 +2634,7 @@
   <data name="&gt;&gt;virtualKey13.ZOrder" xml:space="preserve">
     <value>18</value>
   </data>
-  <metadata name="virtualKey12.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="virtualKey12.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="virtualKey12.Location" type="System.Drawing.Point, System.Drawing">
@@ -2664,7 +2664,7 @@
   <data name="&gt;&gt;virtualKey12.ZOrder" xml:space="preserve">
     <value>19</value>
   </data>
-  <metadata name="virtualKey11.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="virtualKey11.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="virtualKey11.Location" type="System.Drawing.Point, System.Drawing">
@@ -2694,7 +2694,7 @@
   <data name="&gt;&gt;virtualKey11.ZOrder" xml:space="preserve">
     <value>20</value>
   </data>
-  <metadata name="virtualKey10.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="virtualKey10.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="virtualKey10.Location" type="System.Drawing.Point, System.Drawing">
@@ -2724,7 +2724,7 @@
   <data name="&gt;&gt;virtualKey10.ZOrder" xml:space="preserve">
     <value>21</value>
   </data>
-  <metadata name="virtualKey9.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="virtualKey9.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="virtualKey9.Location" type="System.Drawing.Point, System.Drawing">
@@ -2754,7 +2754,7 @@
   <data name="&gt;&gt;virtualKey9.ZOrder" xml:space="preserve">
     <value>22</value>
   </data>
-  <metadata name="virtualKey8.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="virtualKey8.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="virtualKey8.Location" type="System.Drawing.Point, System.Drawing">
@@ -2784,7 +2784,7 @@
   <data name="&gt;&gt;virtualKey8.ZOrder" xml:space="preserve">
     <value>23</value>
   </data>
-  <metadata name="virtualKey7.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="virtualKey7.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="virtualKey7.Location" type="System.Drawing.Point, System.Drawing">
@@ -2814,7 +2814,7 @@
   <data name="&gt;&gt;virtualKey7.ZOrder" xml:space="preserve">
     <value>24</value>
   </data>
-  <metadata name="virtualKey2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="virtualKey2.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="virtualKey2.Location" type="System.Drawing.Point, System.Drawing">
@@ -2844,7 +2844,7 @@
   <data name="&gt;&gt;virtualKey2.ZOrder" xml:space="preserve">
     <value>26</value>
   </data>
-  <metadata name="virtualKey1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="virtualKey1.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="virtualKey1.Location" type="System.Drawing.Point, System.Drawing">
@@ -2874,7 +2874,7 @@
   <data name="&gt;&gt;virtualKey1.ZOrder" xml:space="preserve">
     <value>27</value>
   </data>
-  <metadata name="virtualKey3.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="virtualKey3.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="virtualKey3.Location" type="System.Drawing.Point, System.Drawing">
@@ -2904,7 +2904,7 @@
   <data name="&gt;&gt;virtualKey3.ZOrder" xml:space="preserve">
     <value>28</value>
   </data>
-  <metadata name="virtualKey5.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="virtualKey5.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="virtualKey5.Location" type="System.Drawing.Point, System.Drawing">
@@ -2934,7 +2934,7 @@
   <data name="&gt;&gt;virtualKey5.ZOrder" xml:space="preserve">
     <value>29</value>
   </data>
-  <metadata name="virtualKey4.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="virtualKey4.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="virtualKey4.Location" type="System.Drawing.Point, System.Drawing">
@@ -2964,7 +2964,7 @@
   <data name="&gt;&gt;virtualKey4.ZOrder" xml:space="preserve">
     <value>30</value>
   </data>
-  <metadata name="virtualKey6.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="virtualKey6.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="virtualKey6.Location" type="System.Drawing.Point, System.Drawing">
@@ -2994,14 +2994,14 @@
   <data name="&gt;&gt;virtualKey6.ZOrder" xml:space="preserve">
     <value>31</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>11, 21</value>
+    <value>168, 168</value>
   </data>
   <data name="$this.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>

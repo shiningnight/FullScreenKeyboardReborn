@@ -579,7 +579,7 @@ namespace FullScreenKeyboardReborn
             // GameBoard
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ControlBox = false;
             this.Controls.Add(this.gameCube2);
             this.Controls.Add(this.virtualKey24);

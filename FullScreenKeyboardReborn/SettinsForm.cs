@@ -15,8 +15,9 @@ namespace FullScreenKeyboardReborn
     public partial class SettinsForm : MetroForm
     {
         MainBoard mainBoard;
+        GameBoard gameBoard;
 
-        public SettinsForm(MainBoard mainBoard)
+        public SettinsForm(MainBoard mainBoard, GameBoard gameBoard)
         {
             InitializeComponent();
             //ReloadLayoutList();
@@ -29,6 +30,7 @@ namespace FullScreenKeyboardReborn
             ReloadSettings();
 
             this.mainBoard = mainBoard;
+            this.gameBoard = gameBoard;
         }
 
         private void ReloadSettings()
@@ -132,6 +134,10 @@ namespace FullScreenKeyboardReborn
             if (mainBoard != null)
             {
                 mainBoard.LoadLayout(layouNameBox.Text, scaleUpDown.Value, fontDialog.Font);
+            }
+            if (gameBoard != null)
+            {
+                gameBoard.LoadLayout(scaleUpDown.Value);
             }
         }
 

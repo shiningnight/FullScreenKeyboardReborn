@@ -1,8 +1,8 @@
+using MetroFramework.Forms;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using MetroFramework.Controls;
-using MetroFramework.Forms;
 
 
 
@@ -15,6 +15,11 @@ namespace FullScreenKeyboardReborn
         {
             InitializeComponent();
             Location = Program.KeyboardSettings.CubeLastLocation;
+            foreach (Control item in Controls)
+            {
+                OrginalControlBounds.Add(item, new Rectangle(item.Bounds.Location, item.Bounds.Size));
+            }
+            LoadLayout(Program.KeyboardSettings.ScaleFactor);
             StyleManager = Program.MStyleManager;
         }
 
@@ -90,5 +95,17 @@ namespace FullScreenKeyboardReborn
             Program.KeyboardSettings.CubeLastLocation = Location;
             Settings.Save(Program.KeyboardSettings);
         }
+
+        public void LoadLayout(decimal scaleFactor)
+        {
+            double scaledScaleFactor = (double)scaleFactor * 1.6;
+            foreach (Control item in Controls)
+            {
+                var bounds = OrginalControlBounds[item];
+                item.Bounds = new Rectangle((int)(bounds.X*scaledScaleFactor), (int)(bounds.Y*scaledScaleFactor), (int)(bounds.Width*scaledScaleFactor), (int)(bounds.Height*scaledScaleFactor));
+            }
+        }
+
+        private Dictionary<Control, Rectangle> OrginalControlBounds = new Dictionary<Control, Rectangle>();
     }
 }

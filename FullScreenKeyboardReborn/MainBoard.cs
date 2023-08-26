@@ -19,7 +19,7 @@ namespace FullScreenKeyboardReborn
         public MainBoard()
         {
             InitializeComponent();
-            settinsForm = new SettinsForm(this);
+            settinsForm = new SettinsForm(this, gameBoard);
             Location = Program.KeyboardSettings.MainLastLocation;
             LoadLayout(Program.KeyboardSettings.LayoutName, Program.KeyboardSettings.ScaleFactor, Program.KeyboardSettings.MainFont);
             StyleManager = Program.MStyleManager;
