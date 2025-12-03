@@ -19,7 +19,7 @@ namespace FullScreenKeyboardReborn
         public MainBoard()
         {
             InitializeComponent();
-            settinsForm = new SettinsForm(this, gameBoard);
+            _settingsForm = new SettingsForm(this, gameBoard);
             Location = Program.KeyboardSettings.MainLastLocation;
             LoadLayout(Program.KeyboardSettings.LayoutName, Program.KeyboardSettings.ScaleFactor, Program.KeyboardSettings.MainFont);
             StyleManager = Program.MStyleManager;
@@ -155,9 +155,9 @@ namespace FullScreenKeyboardReborn
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!settinsForm.Visible)
+            if (!_settingsForm.Visible)
             {
-                settinsForm.ShowDialog();
+                _settingsForm.ShowDialog();
             }
         }
 
@@ -237,7 +237,7 @@ namespace FullScreenKeyboardReborn
         }
 
         private GameBoard gameBoard = new GameBoard();
-        private SettinsForm settinsForm;
+        private SettingsForm _settingsForm;
 
     }
 }

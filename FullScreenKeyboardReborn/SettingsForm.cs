@@ -12,12 +12,12 @@ using Newtonsoft.Json;
 
 namespace FullScreenKeyboardReborn
 {
-    public partial class SettinsForm : MetroForm
+    public partial class SettingsForm : MetroForm
     {
         MainBoard mainBoard;
         GameBoard gameBoard;
 
-        public SettinsForm(MainBoard mainBoard, GameBoard gameBoard)
+        public SettingsForm(MainBoard mainBoard, GameBoard gameBoard)
         {
             InitializeComponent();
             //ReloadLayoutList();
