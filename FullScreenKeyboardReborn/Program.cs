@@ -25,6 +25,9 @@ namespace FullScreenKeyboardReborn
             Logger.AutoFlush = true;
             try
             {
+                // Initialize localization before creating any UI
+                LocalizationManager.Instance.Initialize(Settings.CurrentCulture);
+                
                 Controller = new DController();
                 //Controller = new Win32Controller();
                 Application.EnableVisualStyles();

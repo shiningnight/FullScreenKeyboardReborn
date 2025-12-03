@@ -1,0 +1,51 @@
+{
+  "Common": {
+    "OK": "OK",
+    "Cancel": "Cancel",
+    "Save": "Save",
+    "Error": "Error",
+    "Warning": "Warning",
+    "Info": "Info"
+  },
+  "SettingsForm": {
+    "Title": "Settings",
+    "TabLayout": "Layout Settings",
+    "TabMouse": "Mouse Settings",
+    "TabGameCube": "Game Cube Settings",
+    "TabAppearance": "Appearance Settings",
+    "LayoutLabel": "Layout",
+    "ScaleLabel": "Scale",
+    "FontLabel": "Font",
+    "AllowRepeating": "Allow Repeating",
+    "RepeatDelay": "Repeat Delay",
+    "PressDelay": "Press Delay",
+    "ActionDelay": "Action Delay",
+    "RepeatInterval": "Repeat Interval",
+    "ActionModeLeft": "Left Button Mode",
+    "ActionModeRight": "Right Button Mode",
+    "ActionModeWheel": "Wheel Mode",
+    "ActionModeWheelUp": "Wheel Up Mode",
+    "ActionModeWheelDown": "Wheel Down Mode",
+    "CubeUp": "Up",
+    "CubeDown": "Down",
+    "CubeLeft": "Left",
+    "CubeRight": "Right",
+    "CubeActionLeft": "Left Button Action",
+    "CubeActionRight": "Right Button Action",
+    "CubeActionWheel": "Wheel Action",
+    "CubeActionWheelUp": "Wheel Up Action",
+    "CubeActionWheelDown": "Wheel Down Action",
+    "RefreshLayoutList": "Refresh Layout List",
+    "InvalidInputError": "Invalid input.",
+    "LanguageLabel": "Language"
+  },
+  "ActionMode": {
+    "None": "None",
+    "Hold": "Hold",
+    "HoldLock": "Hold Lock",
+    "Strum": "Strum",
+    "Repeat": "Repeat",
+    "RepeatLock": "Repeat Lock",
+    "AutoShift": "Auto Shift"
+  }
+}

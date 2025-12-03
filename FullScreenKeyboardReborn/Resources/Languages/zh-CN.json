@@ -1,0 +1,51 @@
+{
+  "Common": {
+    "OK": "确定",
+    "Cancel": "取消",
+    "Save": "保存",
+    "Error": "错误",
+    "Warning": "警告",
+    "Info": "信息"
+  },
+  "SettingsForm": {
+    "Title": "设置",
+    "TabLayout": "布局设置",
+    "TabMouse": "鼠标设置",
+    "TabGameCube": "游戏方块设置",
+    "TabAppearance": "外观设置",
+    "LayoutLabel": "布局",
+    "ScaleLabel": "缩放",
+    "FontLabel": "字体",
+    "AllowRepeating": "允许重复",
+    "RepeatDelay": "重复延迟",
+    "PressDelay": "按下延迟",
+    "ActionDelay": "动作延迟",
+    "RepeatInterval": "重复间隔",
+    "ActionModeLeft": "左键模式",
+    "ActionModeRight": "右键模式",
+    "ActionModeWheel": "滚轮模式",
+    "ActionModeWheelUp": "滚轮向上模式",
+    "ActionModeWheelDown": "滚轮向下模式",
+    "CubeUp": "上",
+    "CubeDown": "下",
+    "CubeLeft": "左",
+    "CubeRight": "右",
+    "CubeActionLeft": "左键动作",
+    "CubeActionRight": "右键动作",
+    "CubeActionWheel": "滚轮动作",
+    "CubeActionWheelUp": "滚轮向上动作",
+    "CubeActionWheelDown": "滚轮向下动作",
+    "RefreshLayoutList": "刷新布局列表",
+    "InvalidInputError": "输入无效。",
+    "LanguageLabel": "语言"
+  },
+  "ActionMode": {
+    "None": "无",
+    "Hold": "按住",
+    "HoldLock": "按住锁定",
+    "Strum": "弹奏",
+    "Repeat": "重复",
+    "RepeatLock": "重复锁定",
+    "AutoShift": "自动Shift"
+  }
+}

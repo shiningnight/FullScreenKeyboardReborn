@@ -33,6 +33,7 @@ namespace FullScreenKeyboardReborn
         public Point MainLastLocation = new Point(300, 300);
         public decimal ScaleFactor = 1.58M;
         public Font MainFont = new Font("Arial", 9);
+        public static string CurrentCulture = "zh-CN";
 
         public static Settings Default = new Settings();
 
@@ -57,6 +58,10 @@ namespace FullScreenKeyboardReborn
                 {
                     writer.Write(JsonConvert.SerializeObject(settings));
                 }
+        }
+
+        public static void Save() {
+            Save(Default);
         }
     }
 }

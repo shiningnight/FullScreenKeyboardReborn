@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
             this.layouNameBox = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
@@ -87,6 +86,8 @@
             this.scaleTrackbar = new MetroFramework.Controls.MetroTrackBar();
             this.cancelButton = new MetroFramework.Controls.MetroButton();
             this.fontDialog = new System.Windows.Forms.FontDialog();
+            this.languageSelector = new MetroFramework.Controls.MetroComboBox();
+            this.metroLabel23 = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.scaleUpDown)).BeginInit();
             this.metroTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -1033,6 +1034,8 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.languageSelector);
+            this.panel4.Controls.Add(this.metroLabel23);
             this.panel4.Controls.Add(this.metroTile1);
             this.panel4.Controls.Add(this.fontBox);
             this.panel4.Controls.Add(this.metroLabel22);
@@ -1125,6 +1128,30 @@
             this.scaleTrackbar.Value = 100;
             this.scaleTrackbar.ValueChanged += new System.EventHandler(this.scaleTrackbar_ValueChanged);
             // 
+            // languageSelector
+            // 
+            this.languageSelector.FormattingEnabled = true;
+            this.languageSelector.ItemHeight = 23;
+            this.languageSelector.Location = new System.Drawing.Point(94, 145);
+            this.languageSelector.Name = "languageSelector";
+            this.languageSelector.Size = new System.Drawing.Size(134, 29);
+            this.languageSelector.Style = MetroFramework.MetroColorStyle.Purple;
+            this.languageSelector.TabIndex = 42;
+            this.languageSelector.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.languageSelector.UseSelectable = true;
+            this.languageSelector.SelectedIndexChanged += new System.EventHandler(this.languageSelector_SelectedIndexChanged);
+            // 
+            // metroLabel23
+            // 
+            this.metroLabel23.AutoSize = true;
+            this.metroLabel23.Location = new System.Drawing.Point(7, 145);
+            this.metroLabel23.Name = "metroLabel23";
+            this.metroLabel23.Size = new System.Drawing.Size(67, 19);
+            this.metroLabel23.Style = MetroFramework.MetroColorStyle.Purple;
+            this.metroLabel23.TabIndex = 41;
+            this.metroLabel23.Text = "Language";
+            this.metroLabel23.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
             // cancelButton
             // 
             this.cancelButton.DisplayFocus = true;
@@ -1151,7 +1178,7 @@
             this.Controls.Add(this.saveButton);
             this.DisplayHeader = false;
             this.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Icon = ((System.Drawing.Icon)(new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm)).GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "SettingsForm";
@@ -1240,5 +1267,7 @@
         private MetroFramework.Controls.MetroTextBox fontBox;
         private MetroFramework.Controls.MetroLabel metroLabel22;
         private MetroFramework.Controls.MetroTile metroTile1;
+        private MetroFramework.Controls.MetroComboBox languageSelector;
+        private MetroFramework.Controls.MetroLabel metroLabel23;
     }
 }
